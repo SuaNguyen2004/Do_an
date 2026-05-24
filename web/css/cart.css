@@ -1,0 +1,108 @@
+/* Khung chứa bảng sản phẩm bo góc nhẹ và đổ bóng mịn */
+.cart-table-container {
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+/* Tiêu đề cột */
+table thead th {
+  font-size: 0.95rem;
+  padding: 12px 8px !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+/* Các ô dữ liệu trong bảng */
+.cart-item-row td {
+  padding: 16px 8px !important;
+  border-bottom: none !important; /* Loại bỏ đường kẻ gạch chân thô cứng */
+}
+
+/* Khung bọc ảnh sản phẩm vuông vắn bo góc nhẹ */
+.cart-img-wrapper {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background-color: #ffffff;
+}
+
+.cart-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Chữ tên sản phẩm */
+.product-name-text {
+  font-size: 0.95rem;
+}
+
+/* Ô nhập số lượng tối giản bo góc nhẹ theo ảnh mẫu */
+.cart-qty-input {
+  width: 50px;
+  height: 32px;
+  text-align: center;
+  border: 1px solid #ced4da !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #fcfcfc;
+}
+
+.cart-qty-input:focus {
+  box-shadow: none !important;
+  border-color: #ffc107 !important;
+}
+
+/* Nút xóa icon thùng rác màu hồng dâu nhạt */
+.btn-remove-cart {
+  background: none;
+  border: none;
+  color: #f7a4b2; /* Màu hồng nhạt chuẩn mẫu */
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.btn-remove-cart:hover {
+  color: #e57a8c; /* Đậm lên khi dí chuột vào */
+}
+
+/* Nút quay lại mua sắm */
+.back-to-shop {
+  font-size: 0.9rem;
+}
+.back-to-shop:hover {
+  color: #e57a8c !important;
+}
+
+/* Khung tóm tắt tạm tính bên phải */
+.summary-container {
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+/* Dòng thông báo phí vận chuyển màu xanh lá cây đặc trưng */
+.shipping-notice {
+  color: #198754;
+  line-height: 1.5;
+}
+
+/* Nút Tiến hành thanh toán màu vàng cam */
+.btn-proceed-checkout {
+  background-color: #ffc107 !important;
+  border: none !important;
+  color: #000000 !important;
+  font-size: 0.95rem;
+  border-radius: 6px !important;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.btn-proceed-checkout:hover {
+  background-color: #e0a800 !important;
+  transform: translateY(-1px);
+}

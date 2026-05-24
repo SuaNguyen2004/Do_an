@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Giỏ Hàng - MiniMart</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="../css/cart.css" />
+    </head>
+
+    <body class="bg-light">
+        <div class="container pb-5" style="margin-top: 100px">
+            <div class="d-flex align-items-center gap-3 my-4">
+                <i class="fs-2 text-warning"></i>
+                <h3 class="fw-bold m-0 text-dark">Giỏ hàng của bạn</h3>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="cart-table-container bg-white p-3 shadow-sm">
+                        <table class="table align-middle m-0">
+                                <tr class="text-center text-dark fw-bold">
+                                    <th>STT</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
+                                    <th>Hành động</th>
+                                </tr>
+                                <tr class="cart-item-row">
+                                    <td>1</td>
+                                    <td>Bia Heineken</td>
+                                    <td>
+                                        <img
+                                            src="../images/heineken.jpg"
+                                            alt="Bia Heineken"
+                                            width="100px" />
+                                    </td>
+                                    <td>27000</td>
+                                    <td>1</td>
+                                    <td>27000</td>
+                                    <td>Xoá</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">Tổng giá trị đơn hàng</td>
+                                    <td>27000</td>
+                                    <td></td>
+                                </tr>
+                        </table>
+                    </div>
+
+                    <div class="mt-4">
+                        <a
+                            href="index.html"
+                            class="text-decoration-none text-secondary fw-semibold back-to-shop">
+                            <i class="fa-solid fa-chevron-left me-2"></i>Tiếp tục chọn thêm sản phẩm
+                        </a>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-4">
+                    <div class="summary-container bg-white p-4 shadow-sm">
+                        <h4 class="fw-bold text-dark mb-4">Tạm tính</h4>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="fw-bold text-dark">Tổng tiền hàng</span>
+                            <span class="fw-bold text-dark fs-5">27.000 VNĐ</span>
+                        </div>
+
+                        <p class="shipping-notice fw-bold small mb-4">
+                            Phí vận chuyển sẽ được tính ở trang thanh toán
+                        </p>
+
+                        <a
+                            href="thanh-toan.html"
+                            class="btn btn-warning btn-proceed-checkout w-100 fw-bold py-3 text-uppercase shadow-sm">
+                            Tiến hành thanh toán
+                            <i class="fa-solid fa-chevron-right ms-2 small"></i>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

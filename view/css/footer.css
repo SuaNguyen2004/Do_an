@@ -1,0 +1,50 @@
+:root {
+  --main-color: #e57a8c;
+  --text-color: #fff;
+}
+
+/* !icon */
+i {
+  color: var(--main-color);
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+}
+
+/* text */
+.footer-text {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* link */
+.footer-link {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: var(--main-color);
+}
+
+/* title */
+.footer-title {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.footer-title::after {
+  content: "";
+  width: 45px;
+  height: 2px;
+  background: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
