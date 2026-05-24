@@ -1,0 +1,62 @@
+:root {
+  --main-color: #e57a8c;
+}
+.custom-navbar {
+  background-color: var(--main-color);
+}
+
+/* Khung tìm kiếm bao tròn dẹt */
+.search-container {
+  position: relative;
+  max-width: 550px;
+  width: 100%;
+}
+
+.search-input {
+  border-radius: 50px !important;
+  padding-right: 50px;
+  height: 42px;
+  border: none;
+}
+
+.btn-search-trigger {
+  background-color: #ffc107 !important;
+  border: none;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 34px;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-search-trigger i {
+  color: #e57a8c;
+  font-size: 1rem;
+}
+
+.nav-link-custom {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Nút đăng nhập màu trắng chữ đen */
+.btn-login-custom {
+  background-color: white;
+  color: #000000;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 6px 16px;
+  text-decoration: none;
+  border: none;
+}
+
+/* body {
+  padding-top: 70px;
+  background-color: #f8f9fa;
+} */
