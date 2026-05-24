@@ -86,3 +86,28 @@
   align-items: center;
   justify-content: center;
 }
+
+/* ! sản phẩm đặc biệt */
+.special-product-clean {
+  border-color: #f1f2f6 !important;
+}
+
+.special-clean-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.special-clean-img {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 280px;
+}
+
+.special-clean-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}

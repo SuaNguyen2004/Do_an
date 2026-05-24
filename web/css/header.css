@@ -60,3 +60,17 @@
   padding-top: 70px;
   background-color: #f8f9fa;
 } */
+
+/* dropdown danh muc */
+.category-dropdown-menu {
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 220px;
+}
+
+.category-dropdown-item {
+  padding: 14px 20px;
+  color: #333333;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f0f0f0;
+}

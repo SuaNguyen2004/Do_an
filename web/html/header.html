@@ -19,9 +19,35 @@
         <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center me-auto">
-                    <button class="btn btn-light btn-sm me-3 d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-bars"></i> Danh mục
-                    </button>
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-light btn-sm me-3 d-flex align-items-center gap-2 dropdown-toggle-split"
+                            type="button"
+                            id="dropdownCategoryButton"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i> Danh mục
+                        </button>
+
+                        <ul
+                            class="dropdown-menu category-dropdown-menu"
+                            aria-labelledby="dropdownCategoryButton">
+                            <li>
+                                <a
+                                    class="dropdown-item category-dropdown-item"
+                                    href="danh-muc.html?cat=do-uong"
+                                    >Đồ uống</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item category-dropdown-item"
+                                    href="danh-muc.html?cat=do-an-vat"
+                                    >Đồ ăn vặt</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                     <a class="navbar-brand fw-bold text-white m-0 p-0 fs-4" href="#">MINIMART</a>
                 </div>
 

@@ -22,9 +22,35 @@
         <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center me-auto">
-                    <button class="btn btn-light btn-sm me-3 d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-bars"></i> Danh mục
-                    </button>
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-light btn-sm me-3 d-flex align-items-center gap-2 dropdown-toggle-split"
+                            type="button"
+                            id="dropdownCategoryButton"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i> Danh mục
+                        </button>
+
+                        <ul
+                            class="dropdown-menu category-dropdown-menu"
+                            aria-labelledby="dropdownCategoryButton">
+                            <li>
+                                <a
+                                    class="dropdown-item category-dropdown-item"
+                                    href="danh-muc.html?cat=do-uong"
+                                    >Đồ uống</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item category-dropdown-item"
+                                    href="danh-muc.html?cat=do-an-vat"
+                                    >Đồ ăn vặt</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                     <a class="navbar-brand fw-bold text-white m-0 p-0 fs-4" href="#">MINIMART</a>
                 </div>
 
@@ -254,6 +280,39 @@
         </div>
 
         <!-- ! end home -->
+
+        <!-- ! spdb -->
+        <div class="special-product-clean my-5 p-4 bg-white border rounded-3">
+            <div class="row align-items-center g-4">
+                <div class="col-md-6 text-center">
+                    <div class="special-clean-img">
+                        <img
+                            src="../images/heineken.jpg"
+                            alt="Sản phẩm đặc biệt"
+                            class="img-fluid" />
+                    </div>
+                </div>
+
+                <div class="col-md-5 text-start ps-md-4 me-3">
+                    <h2 class="fw-bold mb-3">Tên sản phẩm</h2>
+
+                    <p class="special-clean-desc text-secondary mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut architecto iure
+                        esse, dicta consequatur amet odit fugit corrupti voluptatibus similique eos,
+                        non qui facilis sapiente id mollitia at earum saepe? Ab ducimus, velit
+                        reiciendis omnis hic fuga labore corrupti atque suscipit mollitia eaque esse
+                        necessitatibus dolorum iusto molestias eum quisquam, voluptates minima.
+                    </p>
+
+                    <a
+                        href="chi-tiet-san-pham.html"
+                        class="btn btn-warning fw-bold px-4 py-2 rounded-pill text-white text-decoration-none"
+                        style="color: black !important">
+                        Xem chi tiết sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <!-- ! footer -->
         <footer class="py-5 mt-5 bg-dark">
