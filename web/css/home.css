@@ -29,7 +29,6 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 } */
 
-/* Khung chứa ảnh cố định chiều cao giúp mọi sản phẩm thẳng hàng */
 .product-img-box {
   display: flex;
   align-items: center;
@@ -65,12 +64,11 @@
   margin-bottom: 10px;
 }
 
-/* Bấm nút thêm vào giỏ hàng giống thiết kế mẫu */
 .btn-add-cart {
   border: none;
   color: white;
   font-size: 0.85rem;
-  padding: 8px 4px;
+  padding: 4px 4px 4px 18px;
   transition: color 0.2s;
   text-transform: uppercase;
   background-color: var(--main-color);
@@ -80,6 +78,11 @@
   color: var(--main-color);
   font-size: 1.1rem;
   background-color: white;
-  padding: 7px;
+  padding: 10px;
   border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
