@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./view/css/home.css" />
     <link rel="stylesheet" href="./view/css/footer.css" />
     <link rel="stylesheet" href="./view/css/cart.css" />
+    <link rel="stylesheet" href="./view/css/auth.css" />
 </head>
 
 <body>
@@ -52,9 +53,20 @@
                 <a href="index.php" class="nav-link-custom d-flex align-items-center gap-2">
                     <i class="fa-solid fa-house"></i> Trang Chủ
                 </a>
+                <?php
+                if (isset($_SESSION['user']) && $_SESSION['user'] != "") {
+                    echo '<a href="index.php?act=userinfo" class="btn-login-custom btn-sm">' . $_SESSION['user'] . '</a>
+                            <a href="index.php?act=giohang" class="btn-login-custom btn-sm">Giỏ hàng</a>
+                            <a href="index.php?act=thoat" class="btn-login-custom btn-sm">Thoát</a>
+                            ';
+                } else {
 
-                <a href="dang-nhap.html" class="btn-login-custom btn-sm">Đăng nhập</a>
-                <a href="index.php?act=giohang" class="btn-login-custom btn-sm">Giỏ hàng</a>
+
+                    ?>
+                    <a href="index.php?act=dangnhap" class="btn-login-custom btn-sm">Đăng nhập</a>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </nav>
