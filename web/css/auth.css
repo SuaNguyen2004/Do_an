@@ -1,0 +1,33 @@
+:root {
+  --main-color: #e57a8c;
+}
+
+.auth-body {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.auth-container {
+  background-color: #ffffff;
+  max-width: 420px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.auth-title {
+  color: var(--main-color);
+}
+
+/* Định dạng ô input */
+.auth-input {
+  height: 42px;
+  font-size: 0.9rem;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.auth-link {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: 500;
+}
