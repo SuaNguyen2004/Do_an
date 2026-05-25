@@ -1,11 +1,16 @@
 <!-- main -->
 <main class="mb-4">
     <div class="bg-secondary-subtle p-5">
-        <h2 class="mb-4">QUẢN LÝ DANH MỤC</h2>
-        <form action="index.php?act=adddm" method="post">
+        <h2 class="mb-4">CẬP NHẬP DANH MỤC</h2>
+        <?php
+        // var_dump($kqone);
+        global $kqone;
+        ?>
+        <form action="index.php?act=updatedmform" method="post">
             <label for="" class="fw-bold mb-2">Tên danh mục</label><br />
-            <input type="text" name="tendm" />
-            <input type="submit" value="Thêm mới" name="themmoi" class="btn btn-success ms-3" />
+            <input type="text" name="tendm" value="<?= $kqone[0]['tendm'] ?>" />
+            <input type="hidden" name="id" value="<?= $kqone[0]['id'] ?>" />
+            <input type="submit" value="Cập nhật" name="capnhat" class="btn btn-info ms-3" />
         </form>
 
         <br />

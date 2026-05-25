@@ -24,8 +24,30 @@ if (isset($_GET['act'])) {
             include './view/danhmuc.php';
             break;
         case 'delcart':
-            if()
+            if (isset($_GET['id']) && $_GET['id']) {
+                $id = $_GET['id'];
+                deldm($id);
+            }
+            $kq = getalldm();
             include './view/danhmuc.php';
+            break;
+        case 'updatedmform':
+            if (isset($_GET['id']) && $_GET['id']) {
+                $id = $_GET['id'];
+                $kqone = getonedm($id);
+
+                $kq = getalldm();
+                include './view/updatedmform.php';
+            }
+            if (isset($_POST['id']) && $_POST['id']) {
+                $id = $_POST['id'];
+                $tendm = $_POST['tendm'];
+                updatedm($id, $tendm);
+
+                $kq = getalldm();
+                include './view/danhmuc.php';
+            }
+            // include './view/updatedmform.php';
             break;
         default:
             include './view/home.php';
