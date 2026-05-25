@@ -1,14 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+ob_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+include './model/connectdb.php';
+include './model/danhmuc.php';
 
-<body>
-    <h1>ĐÂY LÀ TRANG ADMIN</h1>
-</body>
+include './view/header.php';
 
-</html>
+if (isset($_GET['act'])) {
+    $act = $_GET['act'];
+
+    switch ($act) {
+        case 'danhmuc':
+            $kq = getalldm();
+            include './view/danhmuc.php';
+            break;
+        case 'adddm':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $tendm = $_POST['tendm'];
+                themdm($tendm);
+            }
+            $kq = getalldm();
+            include './view/danhmuc.php';
+            break;
+        case 'delcart':
+            if()
+            include './view/danhmuc.php';
+            break;
+        default:
+            include './view/home.php';
+            break;
+    }
+} else {
+    include './view/home.php';
+}
+include './view/footer.php';
+
+?>
