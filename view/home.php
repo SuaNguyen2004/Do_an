@@ -24,14 +24,14 @@
                             <h5 class="product-name fw-bold">Sản phẩm 1</h5>
                         </a>
                         <p class="product-price fw-bold">10.000 VNĐ</p>
-                        <form action="index.php?act=giohang" method="post">
-                            <input type="hidden" name="id" value="1">
-                            <input type="hidden" name="tensp" value="Sản phẩm 1">
-                            <input type="hidden" name="img" value="heineken.jpg">
-                            <input type="hidden" name="gia" value="10000">
-                            <input type="submit" value="Thêm vào giỏ" name="addtocart"
-                                class="rounded-pill mt-auto d-flex justify-content-between align-items-center w-100 fw-bold btn-add-cart p-2">
-                        </form>
+                            <form action="index.php?act=giohang" method="post">
+                                <input type="hidden" name="id" value="1">
+                                <input type="hidden" name="tensp" value="Sản phẩm 1">
+                                <input type="hidden" name="img" value="heineken.jpg">
+                                <input type="hidden" name="gia" value="10000">
+                                <input type="submit" value="Thêm vào giỏ" name="addtocart"
+                                    class="rounded-pill mt-auto d-flex justify-content-between align-items-center w-100 fw-bold btn-add-cart p-2">
+                            </form>
                     </div>
                 </div>
             </div>

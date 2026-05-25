@@ -2,8 +2,8 @@
     <div class="auth-container w-100 p-3 border border-1">
         <h3 class="auth-title text-uppercase fw-bold text-center fs-3 mb-3">Đăng Nhập</h3>
         <?php
-        if (isset($txt) && $txt != "") {
-            echo '<font color = "red">' . $txt . '</font>';
+        if (isset($_GET['erro']) && $_GET['erro'] == 1) {
+            echo '<h4 class="text-danger text-center">Tài khoản hoặc mật khẩu không chính xác!!</h4>';
         }
         ?>
         <form action="index.php?act=dangnhap" method="POST">
