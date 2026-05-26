@@ -45,16 +45,6 @@
   text-decoration: none;
 }
 
-/* Nút đăng nhập màu trắng chữ đen */
-.btn-login-custom {
-  background-color: white;
-  color: #000000;
-  font-weight: 500;
-  border-radius: 4px;
-  padding: 6px 16px;
-  text-decoration: none;
-  border: none;
-}
 
 /* body {
   padding-top: 70px;

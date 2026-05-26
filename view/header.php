@@ -21,9 +21,10 @@
         <div class="container-fluid px-4">
             <div class="d-flex align-items-center me-auto">
                 <div class="dropdown">
-                    <button class="btn btn-light btn-sm me-3 d-flex align-items-center gap-2 dropdown-toggle-split"
+                    <button
+                        class="btn btn-light btn-sm me-3 d-flex align-items-center gap-2 dropdown-toggle-split fw-bold"
                         type="button" id="dropdownCategoryButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-bars"></i> Danh mục
+                        <i class="fa-solid fa-bars text-dark"></i> Danh mục
                     </button>
 
                     <ul class="dropdown-menu category-dropdown-menu" aria-labelledby="dropdownCategoryButton">
@@ -49,19 +50,33 @@
                 </form>
             </div>
 
-            <div class="d-flex align-items-center ms-auto gap-4">
-                <a href="index.php" class="nav-link-custom d-flex align-items-center gap-2">
-                    <i class="fa-solid fa-house"></i> Trang Chủ
-                </a>
+            <div class="d-flex align-items-center ms-auto gap-3">
+                <!-- <button class="btn btn-light btn-sm py-2 px-3">
+                    <a href="index.php" class="text-decoration-none fw-bold text-dark">
+                        <i class="fa-solid fa-house me-2 text-dark"></i>Trang Chủ
+                    </a>
+                </button> -->
                 <?php
                 if (isset($_SESSION['user']) && $_SESSION['user'] != "") {
-                    echo '<a href="index.php?act=userinfo" class="btn-login-custom btn-sm">' . $_SESSION['user'] . '</a>
-                            <a href="index.php?act=giohang" class="btn-login-custom btn-sm">Giỏ hàng</a>
-                            <a href="index.php?act=thoat" class="btn-login-custom btn-sm">Thoát</a>
+                    echo '  <button class="btn btn-light btn-sm py-2 px-3">
+                                <a href="index.php?act=userinfo" class="text-decoration-none fw-bold text-dark">
+                                <i class="fa-solid fa-user me-2 text-dark"></i>' . $_SESSION['user'] . '</a>
+                            </button>
+                            <button class="btn btn-light btn-sm py-2 px-3">
+                                <a href="index.php?act=giohang" class="text-decoration-none fw-bold text-dark">
+                                <i class="fa-solid fa-cart-shopping me-2 text-dark"></i>Giỏ hàng</a>
+                            </button>
+                            <button class="btn btn-warning btn-sm py-2 px-3">
+                                <a href="index.php?act=thoat" class="text-decoration-none fw-bold text-dark">
+                                <i class="fa-solid fa-arrow-right-from-bracket me-2 text-dark "></i>Đăng xuất</a>
+                            </button>
                             ';
                 } else {
                     ?>
-                    <a href="index.php?act=dangnhap" class="btn-login-custom btn-sm">Đăng nhập</a>
+                    <button class="btn btn-warning btn-sm py-2 px-3">
+                        <a href="index.php?act=dangnhap" class="text-decoration-none fw-bold text-dark">
+                            <i class="fa-solid fa-arrow-right-to-bracket me-2 text-dark"></i>Đăng nhập</a>
+                    </button>
                     <?php
                 }
                 ?>
