@@ -29,15 +29,17 @@
                     <div class="border-bottom border-2 mb-4"></div>
                 </div>
 
-                <!-- ! sản phẩm 1 -->
+
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 text-center">
                     <?php
                     // VÒNG LẶP CON: Foreach hiển thị toàn bộ sản phẩm của danh mục đó
                     if (count($dssp_theo_dm) > 0) {
                         foreach ($dssp_theo_dm as $sp) {
                             ?>
+
                             <div class="col">
-                                <div class="card h-100 product-card">
+                                <!-- ! sản phẩm 1 -->
+                                <div class="card h-100 product-card sphover">
                                     <a href="chi-tiet-san-pham.html" class="product-img-box">
                                         <img src="./admin/uploads/<?= $sp['img'] ?>" />
                                     </a>
@@ -57,6 +59,7 @@
                                         </form>
                                     </div>
                                 </div>
+                                <!-- kết sp 1 -->
                             </div>
                             <?php
                         }

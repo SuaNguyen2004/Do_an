@@ -111,3 +111,15 @@
   max-width: 100%;
   object-fit: contain;
 }
+
+/* sản phẩm hover */
+.sphover {
+  transition: 0.5s;
+}
+
+.sphover:hover {
+  transform: scale(1.02);
+  box-shadow:
+    2px 2px 4px rgba(23, 37, 84, 0.4),
+    8px 8px 16px rgba(23, 37, 84, 0.2);
+}
