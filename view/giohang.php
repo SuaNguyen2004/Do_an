@@ -29,7 +29,7 @@
                                 <td class="td">' . $i . '</td>
                                 <td class="td">' . $sp['1'] . '</td>
                                 <td class="td">
-                                    <img src="./view/images/' . $sp['2'] . '" width="100px" />
+                                    <img src="./admin/uploads/' . $sp['2'] . '" width="100px" />
                                 </td>
                                 <td class="td">' . $sp['3'] . '</td>
                                 <td class="td">' . $sp['4'] . '</td>

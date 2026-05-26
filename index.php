@@ -4,6 +4,10 @@ ob_start();
 
 include './model/connectdb.php';
 include './model/user.php';
+include './model/danhmuc.php';
+include './model/sanpham.php';
+
+$dsdm = getalldm();
 
 if (!isset($_SESSION['giohang'])) {
     $_SESSION['giohang'] = [];
@@ -36,7 +40,6 @@ if (isset($_GET['act'])) {
                 ';
                 // header('location: index.php?act=dangnhap');
             }
-            include './view/giohang.php';
             break;
 
         case 'delcart':
@@ -81,6 +84,7 @@ if (isset($_GET['act'])) {
             header('location: index.php');
             break;
         default:
+
             include './view/home.php';
             break;
     }
