@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <!-- main -->
+        <main class="mb-4">
+            <div class="bg-secondary-subtle p-5">
+                <h2 class="mb-4">QUẢN LÝ SẢN PHẨM</h2>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <div class="mb-3 ">
+                        <label for="" class="fw-bold mb-2">Danh mục: </label>
+                        <select name="iddm" id="">
+                            <option value="0">--Chọn danh mục--</option>
+                            <option value="1">Đồ ăn</option>
+                            <option value="2">Đồ uống</option></select
+                        ><br />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="fw-bold mb-2">Tên sản phẩm: </label>
+                        <input type="text" name="tensp" /><br />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="fw-bold mb-2">Hình ảnh: </label>
+                        <input type="file" name="tendm" /><br />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="fw-bold mb-2">Giá: </label>
+                        <input type="number" name="gia" /><br />
+                    </div>
+
+                    <input
+                        type="submit"
+                        value="Thêm mới"
+                        name="themmoi"
+                        class="btn btn-success ms-3" />
+                </form>
+                <br />
+                <table class="table table-hover text-center w-75">
+                    <tr class="table-primary">
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Giá</th>
+                        <th>Hành động</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Bia heineken</td>
+                        <td>Bia.jpg</td>
+                        <td>30000</td>
+                        <td>
+                            <a href="#" class="text-decoration-none me-2">Sửa</a> |
+                            <a href="#" class="text-decoration-none text-danger ms-2">Xoá</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

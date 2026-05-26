@@ -22,7 +22,7 @@
                     <a href="index.php?act=danhmuc" class="text-decoration-none text-dark fw-bold">Danh mục</a>
                 </button>
                 <button class="btn btn-success me-2 mb-2 mb-sm-0">
-                    <a href="#" class="text-decoration-none text-light fw-bold">Sản phẩm</a>
+                    <a href="index.php?act=sanpham" class="text-decoration-none text-light fw-bold">Sản phẩm</a>
                 </button>
                 <button class="btn btn-primary me-2">
                     <a href="#" class="text-decoration-none text-light fw-bold">Tài khoản</a>
