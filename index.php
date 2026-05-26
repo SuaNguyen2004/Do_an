@@ -112,13 +112,24 @@ if (isset($_GET['act'])) {
                 } else {
                     $email = "";
                 }
-                insert_customer($user, $pass, $email);
-                echo '
-                <script>
-                alert("Chúc mừng bạn đã đăng ký thành công!");
-                window.location.href = "index.php?act=dangnhap";
-                </script>
+
+                $checkuser = checkuser($user);
+                if ($checkuser > 0) {
+                    echo '
+                        <script>
+                        alert("Tên đăng nhập đã tồn tại! Vui lòng nhập tên đăng nhập khác");
+                        window.location.href = "index.php?act=dangky";
+                        </script>
+                    ';
+                } else {
+                    insert_customer($user, $pass, $email);
+                    echo '
+                    <script>
+                    alert("Chúc mừng bạn đã đăng ký thành công!");
+                    window.location.href = "index.php?act=dangnhap";
+                    </script>
                 ';
+                }
             }
             include './manager/dangky.php';
             break;
