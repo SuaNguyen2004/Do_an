@@ -67,7 +67,7 @@ if (isset($_GET['act'])) {
 
                 $target_dir = "uploads/";
                 $target_file = $target_dir . basename($_FILES["img"]["name"]);
-                $img = basename($_FILES["img"]["name"]);
+                $img = $_FILES["img"]["name"];
                 $uploadOk = 1;
                 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -75,7 +75,11 @@ if (isset($_GET['act'])) {
                     $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                     && $imageFileType != "gif"
                 ) {
-                    // echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                    echo '
+                        <script>
+                            alert("Ảnh không hợp lệ");
+                        </script>
+                    ';
                     $uploadOk = 0;
                 }
 
@@ -86,6 +90,72 @@ if (isset($_GET['act'])) {
 
             }
 
+            // dsdm
+            $dsdm = getalldm();
+
+            // dssp
+            $kq = getallsp();
+            include './view/sanpham.php';
+            break;
+        case 'delsp':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                delsp($id);
+            }
+            // dsdm
+            $dsdm = getalldm();
+
+            // dssp
+            $kq = getallsp();
+            include './view/sanpham.php';
+            break;
+        case 'updatespform':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $spct = getonesp($id);
+            }
+            // dsdm
+            $dsdm = getalldm();
+
+            // dssp
+            $kq = getallsp();
+            include './view/updatespform.php';
+            break;
+        case 'updatedm':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $id = $_POST['id'];
+                $iddm = $_POST['iddm'];
+                $tensp = $_POST['tensp'];
+                $gia = $_POST['gia'];
+
+                if ($_FILES["img"]["name"] != "") {
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                    $img = $_FILES["img"]["name"];
+                    $uploadOk = 1;
+                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+                    if (
+                        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                        && $imageFileType != "gif"
+                    ) {
+                        echo '
+                        <script>
+                            alert("Ảnh không hợp lệ");
+                        </script>
+                    ';
+                        $uploadOk = 0;
+                    }
+
+                    if ($uploadOk == 1) {
+                        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+                        // insertsp($iddm, $tensp, $gia, $img);
+                    }
+                } else {
+                    $img = "";
+                }
+                updatesp($id, $iddm, $tensp, $gia, $img);
+            }
             // dsdm
             $dsdm = getalldm();
 

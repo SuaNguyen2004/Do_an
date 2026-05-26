@@ -1,40 +1,50 @@
 <!-- main -->
 <main class="mb-4">
     <div class="bg-secondary-subtle p-5">
-        <h2 class="mb-4">QUẢN LÝ SẢN PHẨM</h2>
-        <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
+        <h2 class="mb-4">CẬP NHẬT SẢN PHẨM</h2>
+        <form action="index.php?act=updatedm" method="post" enctype="multipart/form-data">
             <?php
             // var_dump($dsdm);
+            // var_dump($spct);
             ?>
             <div class="mb-3 ">
                 <label for="" class="fw-bold mb-2">Danh mục: </label>
                 <select name="iddm" id="">
-                    <option value="0">--Chọn danh mục--</option>
+                    <!-- <option value="0">--Chọn danh mục--</option> -->
                     <?php
-                    global $dsdm;
+                    global $spct;
 
-                    foreach ($dsdm as $dm) {
-                        echo '<option value="' . $dm['id'] . '">' . $dm['tendm'] . '</option>';
+                    $iddmcur = $spct[0]['iddm'];
+                    if (isset($dsdm)) {
+                        foreach ($dsdm as $dm) {
+                            if ($dm['id'] == $iddmcur) {
+                                echo '<option value="' . $dm['id'] . '" selected>' . $dm['tendm'] . '</option>';
+                            } else {
+                                echo '<option value="' . $dm['id'] . '">' . $dm['tendm'] . '</option>';
+                            }
+                        }
                     }
                     ?>
-                    <!-- <option value="1">Đồ ăn</option>
-                    <option value="2">Đồ uống</option> -->
                 </select><br />
             </div>
             <div class="mb-3">
                 <label for="" class="fw-bold mb-2">Tên sản phẩm: </label>
-                <input type="text" name="tensp" /><br />
+                <input type="text" name="tensp" value="<?= $spct[0]['tensp'] ?>" /><br />
             </div>
             <div class="mb-3">
                 <label for="" class="fw-bold mb-2">Hình ảnh: </label>
                 <input type="file" name="img" /><br />
             </div>
             <div class="mb-3">
-                <label for="" class="fw-bold mb-2">Giá: </label>
-                <input type="number" name="gia" /><br />
+                <p class="fw-bold">Ảnh hiện tại :</p> <img src="./uploads/<?= $spct[0]['img'] ?>" width="100px" alt="">
             </div>
+            <div class="mb-3">
+                <label for="" class="fw-bold mb-2">Giá: </label>
+                <input type="number" name="gia" value="<?= $spct[0]['gia'] ?>" /><br />
+            </div>
+            <input type="hidden" name="id" value="<?= $spct[0]['id'] ?>">
 
-            <input type="submit" value="Thêm mới" name="themmoi" class="btn btn-success ms-3" />
+            <input type="submit" value="Cập nhật" name="capnhat" class="btn btn-info ms-3" />
         </form>
         <br />
         <table class="table table-hover text-center w-75">
@@ -57,7 +67,7 @@
                         <td class="p-3">' . number_format($sp['gia'], 0, ',', '.') . '₫</td>
 
                         <td class="p-3">
-                            <a href="index.php?act=updatespform&id=' . $sp['id'] . '" class="text-decoration-none me-2">Sửa</a> |
+                            <a href="index.php?act=updatespform" class="text-decoration-none me-2">Sửa</a> |
                             <a href="index.php?act=delsp&id=' . $sp['id'] . '" class="text-decoration-none text-danger ms-2">Xoá</a>
                         </td>
                     </tr>';
