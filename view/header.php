@@ -56,9 +56,10 @@
                         <i class="fa-solid fa-house me-2 text-dark"></i>Trang Chủ
                     </a>
                 </button> -->
+
                 <?php
                 if (isset($_SESSION['user']) && $_SESSION['user'] != "") {
-                    echo '  <button class="btn btn-light btn-sm py-2 px-3">
+                    echo '<button class="btn btn-light btn-sm py-2 px-3">
                                 <a href="index.php?act=userinfo" class="text-decoration-none fw-bold text-dark">
                                 <i class="fa-solid fa-user me-2 text-dark"></i>' . $_SESSION['user'] . '</a>
                             </button>
@@ -76,6 +77,10 @@
                     <button class="btn btn-warning btn-sm py-2 px-3">
                         <a href="index.php?act=dangnhap" class="text-decoration-none fw-bold text-dark">
                             <i class="fa-solid fa-arrow-right-to-bracket me-2 text-dark"></i>Đăng nhập</a>
+                    </button>
+                    <button class="btn btn-warning btn-sm py-2 px-3">
+                        <a href="index.php?act=dangky" class="text-decoration-none fw-bold text-dark">
+                            <i class="fa-solid fa-arrow-right-to-bracket me-2 text-dark"></i>Đăng ký</a>
                     </button>
                     <?php
                 }

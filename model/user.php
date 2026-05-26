@@ -12,4 +12,16 @@ function getuserinfo($user, $pass)
         return 0;
     }
 }
+function insert_customer($user, $pass, $email)
+{
+    $conn = connectdb();
+    if ($email == "") {
+        $sql = "INSERT INTO tbl_user (user, pass, role)
+            VALUES ('$user', '$pass', 0)";
+    } else {
+        $sql = "INSERT INTO tbl_user (user, pass, email, role)
+            VALUES ('$user', '$pass', '$email', 0)";
+    }
+    $conn->exec($sql);
+}
 ?>

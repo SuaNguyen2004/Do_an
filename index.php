@@ -102,6 +102,26 @@ if (isset($_GET['act'])) {
             }
             include './manager/dangnhap.php';
             break;
+        case 'dangky':
+            if (isset($_POST['dangky']) && $_POST['dangky']) {
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+
+                if ($_POST['email'] != "") {
+                    $email = $_POST['email'];
+                } else {
+                    $email = "";
+                }
+                insert_customer($user, $pass, $email);
+                echo '
+                <script>
+                alert("Chúc mừng bạn đã đăng ký thành công!");
+                window.location.href = "index.php?act=dangnhap";
+                </script>
+                ';
+            }
+            include './manager/dangky.php';
+            break;
         case 'thoat':
             unset($_SESSION['role']);
             unset($_SESSION['id']);
