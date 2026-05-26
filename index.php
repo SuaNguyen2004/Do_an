@@ -26,9 +26,24 @@ if (isset($_GET['act'])) {
                     $img = $_POST['img'];
                     $gia = $_POST['gia'];
                     $sl = 1;
+                    $i = 0;
+                    $fg = 0;
 
-                    $item = array($id, $tensp, $img, $gia, $sl);
-                    array_push($_SESSION['giohang'], $item);
+                    foreach ($_SESSION['giohang'] as $cart) {
+                        if ($cart[0] == $id) {
+                            $slnew = $sl + $cart[4];
+                            $_SESSION['giohang'][$i][4] = $slnew;
+                            $fg = 1;
+                            break;
+                        }
+                        $i++;
+                    }
+
+                    if ($fg == 0) {
+                        $item = array($id, $tensp, $img, $gia, $sl);
+                        array_push($_SESSION['giohang'], $item);
+                    }
+                    header('location: index.php?act=giohang');
                 }
                 include './view/giohang.php';
             } else {
@@ -44,9 +59,20 @@ if (isset($_GET['act'])) {
 
         case 'delcart':
             if (isset($_SESSION['giohang']) && $_SESSION['giohang'] > 0) {
-                unset($_SESSION['giohang']);
+                if (isset($_GET['id']) && $_GET['id'] >= 0) {
+                    array_splice($_SESSION['giohang'], $_GET['id'], 1);
+                } else {
+                    // unset($_SESSION['giohang']);
+                    $_SESSION['giohang'] = [];
+                }
+
+                if (count($_SESSION['giohang']) > 0) {
+                    header('location: index.php?act=giohang');
+                } else {
+                    header('location: index.php');
+                }
             }
-            include './view/home.php';
+            // include './view/home.php';
             break;
 
         case 'home':
@@ -72,7 +98,6 @@ if (isset($_GET['act'])) {
                     }
                 } else {
                     header('location: index.php?act=dangnhap&erro=1');
-                    exit();
                 }
             }
             include './manager/dangnhap.php';

@@ -60,8 +60,6 @@
                             <a href="index.php?act=thoat" class="btn-login-custom btn-sm">Thoát</a>
                             ';
                 } else {
-
-
                     ?>
                     <a href="index.php?act=dangnhap" class="btn-login-custom btn-sm">Đăng nhập</a>
                     <?php
