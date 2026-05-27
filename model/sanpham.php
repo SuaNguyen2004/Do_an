@@ -6,7 +6,7 @@ function getallsp($kyw = "")
     if ($kyw != "") {
         $sql .= " AND tensp LIKE '%" . $kyw . "%'";
     }
-    $sql .= " ORDER BY id DESC";
+    $sql .= " ORDER BY id DESC LIMIT 24";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);

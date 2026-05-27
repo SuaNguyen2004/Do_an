@@ -162,13 +162,31 @@ if (isset($_GET['act'])) {
             break;
 
         case 'sanpham':
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
+            // if (isset($_GET['id']) && $_GET['id'] > 0) {
+            //     $id = $_GET['id'];
+            //     $getspbydm = getspbydm($id);
+            // } else {
+            //     $getspbydm = [];
+            // }
+
+            // AI
+            // 1. Kiểm tra nếu người dùng thực hiện hành động TÌM KIẾM
+            if (isset($_POST['keyword']) && $_POST['keyword'] != "") {
+                $kyw = $_POST['keyword'];
+                $allsp = getallsp($kyw); // Gọi hàm getallsp có truyền từ khóa tìm kiếm
+                $getspbydm = []; // Đặt mảng này bằng rỗng để kích hoạt khối hiển thị tìm kiếm
+
+                // 2. Nếu người dùng chọn xem theo DANH MỤC cụ thể
+            } elseif (isset($_GET['id']) && $_GET['id'] > 0) {
                 $id = $_GET['id'];
                 $getspbydm = getspbydm($id);
+                $allsp = [];
+
+                // 3. Nếu người dùng chọn xem TẤT CẢ SẢN PHẨM mặc định
             } else {
+                $allsp = getallsp(); // Lấy toàn bộ không truyền từ khóa
                 $getspbydm = [];
             }
-
             include './view/sanpham.php';
             break;
 
