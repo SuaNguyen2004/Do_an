@@ -19,7 +19,12 @@ if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case 'giohang':
+            // check dang nhap va sua gio hang theo tung id
             if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+                $iduser = $_SESSION['id'];
+                if (!isset($_SESSION['giohang']) || !isset($_SESSION['giohang'][$iduser])) {
+                    $_SESSION['giohang'][$iduser] = [];
+                }
                 if (isset($_POST['addtocart']) && $_POST['addtocart']) {
                     $id = $_POST['id'];
                     $tensp = $_POST['tensp'];
@@ -33,10 +38,10 @@ if (isset($_GET['act'])) {
                     $i = 0;
                     $fg = 0;
 
-                    foreach ($_SESSION['giohang'] as $cart) {
+                    foreach ($_SESSION['giohang'][$iduser] as $cart) {
                         if ($cart[0] == $id) {
                             $slnew = $sl + $cart[4];
-                            $_SESSION['giohang'][$i][4] = $slnew;
+                            $_SESSION['giohang'][$iduser][$i][4] = $slnew;
                             $fg = 1;
                             break;
                         }
@@ -45,7 +50,7 @@ if (isset($_GET['act'])) {
 
                     if ($fg == 0) {
                         $item = array($id, $tensp, $img, $gia, $sl);
-                        array_push($_SESSION['giohang'], $item);
+                        array_push($_SESSION['giohang'][$iduser], $item);
                     }
                     header('location: index.php?act=giohang');
                 }
@@ -62,18 +67,22 @@ if (isset($_GET['act'])) {
             break;
 
         case 'delcart':
-            if (isset($_SESSION['giohang']) && $_SESSION['giohang'] > 0) {
-                if (isset($_GET['id']) && $_GET['id'] >= 0) {
-                    array_splice($_SESSION['giohang'], $_GET['id'], 1);
-                } else {
-                    // unset($_SESSION['giohang']);
-                    $_SESSION['giohang'] = [];
-                }
+            // xoa gio hang theo tung id
+            if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+                $iduser = $_SESSION['id'];
+                if (isset($_SESSION['giohang'][$iduser]) && $_SESSION['giohang'][$iduser] > 0) {
+                    if (isset($_GET['id']) && $_GET['id'] >= 0) {
+                        array_splice($_SESSION['giohang'][$iduser], $_GET['id'], 1);
+                    } else {
+                        // unset($_SESSION['giohang']);
+                        $_SESSION['giohang'][$iduser] = [];
+                    }
 
-                if (count($_SESSION['giohang']) > 0) {
-                    header('location: index.php?act=giohang');
-                } else {
-                    header('location: index.php');
+                    if (count($_SESSION['giohang'][$iduser]) > 0) {
+                        header('location: index.php?act=giohang');
+                    } else {
+                        header('location: index.php');
+                    }
                 }
             }
             // include './view/home.php';

@@ -3,7 +3,10 @@
         <i class="fs-2 text-warning"></i>
         <h3 class="fw-bold m-0 text-dark">Giỏ hàng của bạn</h3>
     </div>
-
+    <?php
+    // var_dump($_SESSION['user']);
+    // var_dump($_SESSION['id']);
+    ?>
     <div class="row g-4">
         <div class="col-lg-8">
             <div class="cart-table-container bg-white p-3 shadow-sm">
@@ -19,12 +22,14 @@
                     </tr>
                     <?php
                     // var_dump($_SESSION['giohang']);
+                    $iduser = $_SESSION['id'];
                     $i = 0;
                     $tong = 0;
-                    foreach ($_SESSION['giohang'] as $sp) {
-                        $tt = $sp[3] * $sp[4];
-                        $tong += $tt;
-                        echo '
+                    if (isset($_SESSION['giohang'][$iduser]) && count($_SESSION['giohang'][$iduser]) > 0) {
+                        foreach ($_SESSION['giohang'][$iduser] as $sp) {
+                            $tt = $sp[3] * $sp[4];
+                            $tong += $tt;
+                            echo '
                             <tr class="cart-item-row">
                                 <td class="td">' . $i + 1 . '</td>
                                 <td class="td">' . $sp[1] . '</td>
@@ -36,7 +41,8 @@
                                 <td class="td">' . $tt . '</td>
                                 <td class="td"> <button class="btn btn-danger"><a href="index.php?act=delcart&id=' . $i . '" class="text-decoration-none text-light fw-bold">Xoá</a></button> </td>
                             </tr>';
-                        $i++;
+                            $i++;
+                        }
                     }
                     ?>
                     <tr>
