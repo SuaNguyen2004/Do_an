@@ -153,6 +153,13 @@ if (isset($_GET['act'])) {
             unset($_SESSION['user']);
             header('location: index.php');
             break;
+        case 'danhmuc':
+            include './view/sanpham.php';
+            break;
+        case 'sanpham':
+            $allsp = getallsp();
+            include './view/sanpham.php';
+            break;
         case 'chitietsanpham':
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $id = $_GET['id'];

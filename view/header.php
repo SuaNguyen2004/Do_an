@@ -30,10 +30,14 @@
 
                     <ul class="dropdown-menu category-dropdown-menu" aria-labelledby="dropdownCategoryButton">
                         <li>
-                            <a class="dropdown-item category-dropdown-item" href="danh-muc.html?cat=do-uong">Đồ uống</a>
+                            <a class="dropdown-item category-dropdown-item" href="index.php?act=sanpham">Tất cả sản
+                                phẩm</a>
                         </li>
                         <li>
-                            <a class="dropdown-item category-dropdown-item" href="danh-muc.html?cat=do-an-vat">Đồ ăn
+                            <a class="dropdown-item category-dropdown-item" href="#">Đồ uống</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item category-dropdown-item" href="#">Đồ ăn
                                 vặt</a>
                         </li>
                     </ul>
