@@ -31,4 +31,14 @@ function getonesp($id)
     $kq = $stmt->fetchAll();
     return $kq;
 }
+function getspdb()
+{
+    $conn = connectdb();
+    $sql = "SELECT * FROM tbl_sanpham WHERE special = 1 ORDER BY id DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $kq = $stmt->fetchAll();
+    return $kq;
+}
 ?>

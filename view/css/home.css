@@ -18,16 +18,9 @@
 .product-card {
   border: 1px solid #f1f2f6;
   border-radius: 8px;
-  /* transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease; */
   background-color: #ffffff;
 }
 
-/* .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-} */
 
 .product-img-box {
   display: flex;
@@ -89,7 +82,7 @@
 
 /* ! sản phẩm đặc biệt */
 .special-product-clean {
-  border-color: #f1f2f6 !important;
+  border-color: #f1f2f6;
 }
 
 .special-clean-desc {

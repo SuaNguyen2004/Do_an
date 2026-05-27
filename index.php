@@ -8,6 +8,7 @@ include './model/danhmuc.php';
 include './model/sanpham.php';
 
 $dsdm = getalldm();
+$spdb = getspdb();
 
 if (!isset($_SESSION['giohang'])) {
     $_SESSION['giohang'] = [];

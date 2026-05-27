@@ -77,4 +77,32 @@
     ?>
 </div>
 
+<!-- ! spdb -->
+<?php
+if (isset($spdb)) {
+    ?>
+    <div class="special-product-clean my-5 p-4 bg-white border rounded-3">
+        <div class="row align-items-center g-4">
+            <div class="col-md-6 text-center">
+                <div class="special-clean-img">
+                    <img src="./admin/uploads/<?= $spdb[0]['img'] ?>" alt="" class="img-fluid" />
+                </div>
+            </div>
+
+            <div class="col-md-5 text-start ps-md-4 me-3">
+                <h2 class="fw-bold mb-3"><?= $spdb[0]['tensp'] ?></h2>
+
+                <p class="special-clean-desc text-secondary mb-4">
+                    <?= $spdb[0]['mota'] ?>
+                </p>
+
+                <a href="index.php?act=chitietsanpham&id=<?= $spdb[0]['id'] ?>"
+                    class="btn btn-warning fw-bold px-4 py-2 rounded-pill text-dark text-decoration-none">
+                    Xem chi tiết sản phẩm
+                </a>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
 <!-- ! end home -->
