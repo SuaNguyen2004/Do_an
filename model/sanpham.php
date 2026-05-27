@@ -21,4 +21,14 @@ function getspbydm($iddm)
     $kq = $stmt->fetchAll();
     return $kq;
 }
+function getonesp($id)
+{
+    $conn = connectdb();
+    $sql = "SELECT * FROM tbl_sanpham WHERE id=" . $id;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $kq = $stmt->fetchAll();
+    return $kq;
+}
 ?>

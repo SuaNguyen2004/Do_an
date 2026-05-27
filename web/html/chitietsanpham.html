@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chi Tiết Sản Phẩm - MINIMART</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="../css/chitietsanpham.css" />
+    </head>
+    <body>
+        <main>
+            <div class="container pb-5">
+                <div class="product-container p-4 p-md-5">
+                    <div class="row g-5">
+                        <div class="col-12 col-md-6">
+                            <div class="img-box">
+                                <img src="../images/heineken.jpg" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+                            <h1 class="fw-bold text-dark mb-2">Bia heineken</h1>
+
+                            <h2 class="product-price fw-bold mb-4">30.000 đ</h2>
+
+                            <form action="#" method="POST" enctype="multipart/form-data">
+                                <div class="mb-4">
+                                    <label for="" class="form-label fw-bold text-secondary mb-2"
+                                        >Số lượng:</label
+                                    >
+                                    <input
+                                        type="number"
+                                        class="form-control input-box"
+                                        value="1"
+                                        max="1"
+                                        min="20"
+                                        step="1" />
+                                </div>
+
+                                <div class="mt-4">
+                                    <input
+                                        type="submit"
+                                        value="THÊM VÀO GIỎ"
+                                        name="addtocart"
+                                        class="btn px-4 py-3 rounded-pill text-light fw-bold"
+                                        style="background-color: #e57a8c" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

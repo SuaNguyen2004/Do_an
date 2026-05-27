@@ -40,13 +40,13 @@
                             <div class="col">
                                 <!-- ! sản phẩm 1 -->
                                 <div class="card h-100 product-card sphover">
-                                    <a href="chi-tiet-san-pham.html" class="product-img-box">
+                                    <a href="index.php?act=chitietsanpham&id=<?= $sp['id'] ?>" class="product-img-box">
                                         <img src="./admin/uploads/<?= $sp['img'] ?>" />
                                     </a>
 
                                     <div class="card-body d-flex flex-column pt-0">
-                                        <a href="chi-tiet-san-pham.html" class="text-decoration-none">
-                                            <h5 class="product-name fw-bold"><?= $sp['tensp'] ?></h5>
+                                        <a href="index.php?act=chitietsanpham&id=<?= $sp['id'] ?>" class="text-decoration-none">
+                                            <h5 class="product-name fw-bold text-uppercase"><?= $sp['tensp'] ?></h5>
                                         </a>
                                         <p class="product-price fw-bold"><?= number_format($sp['gia'], 0, ',', '.') ?> đ</p>
                                         <form action="index.php?act=giohang" method="post">

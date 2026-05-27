@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./view/css/footer.css" />
     <link rel="stylesheet" href="./view/css/cart.css" />
     <link rel="stylesheet" href="./view/css/auth.css" />
+    <link rel="stylesheet" href="./view/css/chitietsanpham.css" />
 </head>
 
 <body>

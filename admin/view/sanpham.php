@@ -54,7 +54,7 @@
                         <td class="p-3">' . $i + 1 . '</td>
                         <td class="p-3">' . $sp['tensp'] . '</td>
                         <td class="p-3"><img src = "./uploads/' . $sp['img'] . '" width = "70px"></td>
-                        <td class="p-3">' . number_format($sp['gia'], 0, ',', '.') . '₫</td>
+                        <td class="p-3">' . number_format($sp['gia'], 0, ',', '.') . ' đ</td>
 
                         <td class="p-3">
                             <a href="index.php?act=updatespform&id=' . $sp['id'] . '" class="text-decoration-none me-2">Sửa</a> |

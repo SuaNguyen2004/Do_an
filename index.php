@@ -25,7 +25,11 @@ if (isset($_GET['act'])) {
                     $tensp = $_POST['tensp'];
                     $img = $_POST['img'];
                     $gia = $_POST['gia'];
-                    $sl = 1;
+                    if (isset($_POST['sl']) && $_POST['sl'] > 0) {
+                        $sl = $_POST['sl'];
+                    } else {
+                        $sl = 1;
+                    }
                     $i = 0;
                     $fg = 0;
 
@@ -138,6 +142,13 @@ if (isset($_GET['act'])) {
             unset($_SESSION['id']);
             unset($_SESSION['user']);
             header('location: index.php');
+            break;
+        case 'chitietsanpham':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $kq = getonesp($id);
+            }
+            include './view/chitietsanpham.php';
             break;
         default:
 
