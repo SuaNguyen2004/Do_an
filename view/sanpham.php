@@ -19,7 +19,7 @@ if (isset($getspbydm) && count($getspbydm) > 0) {
     <!-- ! end home -->
     <?php
     // AI làm
-} elseif (isset($allsp) && count($allsp) > 0 && isset($kyw)) {
+} elseif (isset($kyw)) {
     ?>
     <div class="container pb-5 bg-light" style="margin-top: 80px">
         <div class="text-center my-5">
@@ -29,7 +29,15 @@ if (isset($getspbydm) && count($getspbydm) > 0) {
         <div class="mb-5">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 text-center">
                 <?php
-                showsp($allsp);
+                // AI
+                if (isset($allsp) && count($allsp) > 0) {
+                    showsp($allsp);
+                } else {
+                    echo '
+                    <div class="col-12 w-100 text-center py-5">
+                        <h4 class="text-muted">Không tìm thấy sản phẩm nào phù hợp với từ khóa của bạn.</h4>
+                    </div>';
+                }
                 ?>
             </div>
         </div>
