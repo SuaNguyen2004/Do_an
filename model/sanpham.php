@@ -1,8 +1,12 @@
 <?php
-function getallsp()
+function getallsp($kyw = "")
 {
     $conn = connectdb();
-    $sql = "SELECT * FROM tbl_sanpham";
+    $sql = "SELECT * FROM tbl_sanpham WHERE 1";
+    if ($kyw != "") {
+        $sql .= " AND tensp LIKE '%" . $kyw . "%'";
+    }
+    $sql .= " ORDER BY id DESC";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);

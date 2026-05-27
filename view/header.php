@@ -33,20 +33,33 @@
                             <a class="dropdown-item category-dropdown-item" href="index.php?act=sanpham">Tất cả sản
                                 phẩm</a>
                         </li>
-                        <li>
+                        <?php
+                        // var_dump($dsdm);
+                        if (isset($dsdm) && count($dsdm) > 0) {
+                            foreach ($dsdm as $dm) {
+                                echo '
+                                <li>
+                                    <a class="dropdown-item category-dropdown-item" href="index.php?act=sanpham&id=' . $dm['id'] . '">' . $dm['tendm'] . '</a>
+                                </li>';
+                            }
+                        } else {
+                            echo 'Chưa có danh mục.';
+                        }
+                        ?>
+                        <!-- <li>
                             <a class="dropdown-item category-dropdown-item" href="#">Đồ uống</a>
                         </li>
                         <li>
                             <a class="dropdown-item category-dropdown-item" href="#">Đồ ăn
                                 vặt</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <a class="navbar-brand fw-bold text-white m-0 p-0 fs-4" href="index.php">MINIMART</a>
             </div>
 
             <div class="flex-grow-1 d-flex justify-content-center mx-5">
-                <form class="search-container" action="#" method="POST">
+                <form class="search-container" action="index.php?act=sanpham&keyword=" method="POST">
                     <input class="form-control search-input" type="search" placeholder="Tìm kiếm sản phẩm..."
                         aria-label="Search" />
                     <button class="btn btn-warning rounded-circle btn-search-trigger" type="submit">

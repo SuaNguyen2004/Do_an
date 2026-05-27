@@ -9,6 +9,7 @@ include './model/sanpham.php';
 
 $dsdm = getalldm();
 $spdb = getspdb();
+$allsp = getallsp();
 
 if (!isset($_SESSION['giohang'])) {
     $_SESSION['giohang'] = [];
@@ -116,6 +117,7 @@ if (isset($_GET['act'])) {
             }
             include './manager/dangnhap.php';
             break;
+
         case 'dangky':
             if (isset($_POST['dangky']) && $_POST['dangky']) {
                 $user = $_POST['user'];
@@ -147,19 +149,29 @@ if (isset($_GET['act'])) {
             }
             include './manager/dangky.php';
             break;
+
         case 'thoat':
             unset($_SESSION['role']);
             unset($_SESSION['id']);
             unset($_SESSION['user']);
             header('location: index.php');
             break;
+
         case 'danhmuc':
             include './view/sanpham.php';
             break;
+
         case 'sanpham':
-            $allsp = getallsp();
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $getspbydm = getspbydm($id);
+            } else {
+                $getspbydm = [];
+            }
+
             include './view/sanpham.php';
             break;
+
         case 'chitietsanpham':
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $id = $_GET['id'];
