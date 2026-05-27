@@ -45,4 +45,34 @@ function getspdb()
     $kq = $stmt->fetchAll();
     return $kq;
 }
+
+function showsp($getspbydm){
+    foreach ($getspbydm as $sp) {
+                    echo '
+            <!-- ! sản phẩm 1 -->
+                <div class="col">
+                    <div class="card h-100 product-card sphover">
+                        <a href="index.php?act=chitietsanpham&id=' . $sp['id'] . '" class="product-img-box">
+                            <img src="./admin/uploads/' . $sp['img'] . '" alt="" />
+                        </a>
+
+                        <div class="card-body d-flex flex-column pt-0">
+                            <a href="index.php?act=chitietsanpham&id=' . $sp['id'] . '" class="text-decoration-none">
+                                <h5 class="product-name fw-bold">' . $sp['tensp'] . '</h5>
+                            </a>
+                            <p class="product-price fw-bold">' . number_format($sp['gia'], 0, ',', '.') . ' đ</p>
+                            <form action="index.php?act=giohang" method="post">
+                                <input type="hidden" name="id" value="' . $sp['id'] . '">
+                                <input type="hidden" name="tensp" value="' . $sp['tensp'] . '">
+                                <input type="hidden" name="img" value="' . $sp['img'] . '">
+                                <input type="hidden" name="gia" value="' . $sp['gia'] . '">
+                                <input type="submit" value="Thêm vào giỏ" name="addtocart"
+                                    class="rounded-pill mt-auto d-flex justify-content-between align-items-center w-100 fw-bold btn-add-cart p-2">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            ';
+                }
+}
 ?>
