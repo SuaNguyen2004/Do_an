@@ -25,10 +25,11 @@
                     <a href="index.php?act=sanpham" class="text-decoration-none text-light fw-bold">Sản phẩm</a>
                 </button>
                 <button class="btn btn-primary me-2">
-                    <a href="#" class="text-decoration-none text-light fw-bold">Tài khoản</a>
+                    <a href="index.php?act=user" class="text-decoration-none text-light fw-bold">Tài khoản</a>
                 </button>
                 <button class="btn btn-danger me-2">
-                    <a href="#" class="text-decoration-none text-light fw-bold text-center">Thoát</a>
+                    <a href="index.php?act=thoat" class="text-decoration-none text-light fw-bold text-center">Đăng
+                        xuất</a>
                 </button>
             </div>
         </div>
