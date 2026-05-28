@@ -4,8 +4,8 @@
         <h2 class="mb-4">QUẢN LÝ DANH MỤC</h2>
         <form action="index.php?act=adddm" method="post">
             <label for="" class="fw-bold mb-2">Tên danh mục:</label>
-            <input type="text" name="tendm" class="form-control" />
-            <input type="submit" value="Thêm mới" name="themmoi" class="btn btn-success mt-3" />
+            <input type="text" name="tendm" id="tendm" class="form-control" />
+            <input type="submit" value="Thêm mới" name="themmoi" onclick="return checkEmptyDM()" class="btn btn-success mt-3" />
         </form>
 
         <br />

@@ -8,7 +8,7 @@
             ?>
             <div class="mb-3 ">
                 <label for="" class="form-label fw-bold mb-2">Danh mục: </label>
-                <select name="iddm" id="" class="form-control">
+                <select name="iddm" id="iddm" class="form-control">
                     <option value="0">--Chọn danh mục--</option>
                     <?php
                     global $dsdm;
@@ -23,18 +23,19 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Tên sản phẩm: </label>
-                <input type="text" name="tensp" class="form-control" /><br />
+                <input type="text" name="tensp" id="tensp" class="form-control" /><br />
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Hình ảnh: </label>
-                <input type="file" name="img" class="form-control" /><br />
+                <input type="file" name="img" id="img" class="form-control" /><br />
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Giá: </label>
-                <input type="number" name="gia" class="form-control" min="0" /><br />
+                <input type="number" name="gia" class="form-control" min="0" value="0" /><br />
             </div>
 
-            <input type="submit" value="Thêm mới" name="themmoi" class="btn btn-success mt-3" />
+            <input type="submit" value="Thêm mới" name="themmoi" onclick="return checkEmptySP()"
+                class="btn btn-success mt-3" />
         </form>
         <br />
         <table class="table table-hover text-center w-75">

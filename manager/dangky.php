@@ -6,7 +6,8 @@
             <div class="mb-3">
                 <label class="form-label fw-bold">Tên đăng nhập: </label>
                 <div class="position-relative d-flex align-items-center">
-                    <input type="text" name="user" class="form-control auth-input" placeholder="Nhập tên đăng nhập" required />
+                    <input type="text" name="user" id="user" class="form-control auth-input"
+                        placeholder="Nhập tên đăng nhập" />
                 </div>
             </div>
 
@@ -21,14 +22,16 @@
             <div class="mb-3">
                 <label class="form-label fw-bold">Mật khẩu: </label>
                 <div class="position-relative d-flex align-items-center">
-                    <input type="password" name="pass" class="form-control auth-input" placeholder="Nhập mật khẩu" required />
+                    <input type="password" name="pass" id="pass" class="form-control auth-input"
+                        placeholder="Nhập mật khẩu" />
                 </div>
             </div>
 
             <!-- <button type="submit"  class="btn btn-success w-100 fw-bold mb-3">
                 ĐĂNG KÝ
             </button> -->
-            <input type="submit" value="ĐĂNG KÝ" name="dangky" class="btn btn-success w-100 fw-bold mb-3">
+            <input type="submit" value="ĐĂNG KÝ" name="dangky" onclick="return checkEmpty()"
+                class="btn btn-success w-100 fw-bold mb-3">
 
             <div class="text-center auth-footer-text">
                 Đã có tài khoản?

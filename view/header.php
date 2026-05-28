@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="./view/css/cart.css" />
     <link rel="stylesheet" href="./view/css/auth.css" />
     <link rel="stylesheet" href="./view/css/chitietsanpham.css" />
+
+    <!-- script -->
+    <script src="./controller/script.js"></script>
 </head>
 
 <body>

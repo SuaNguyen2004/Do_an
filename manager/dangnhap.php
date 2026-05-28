@@ -11,7 +11,7 @@
                 <label class="form-label fw-bold">Tên đăng nhập: </label>
                 <div class="position-relative d-flex align-items-center">
                     <input type="text" class="form-control auth-input" placeholder="Nhập tên đăng nhập" name="user"
-                        required />
+                        id="user" />
                 </div>
             </div>
 
@@ -19,12 +19,13 @@
                 <label class="form-label fw-bold">Mật khẩu: </label>
                 <div class="position-relative d-flex align-items-center">
                     <input type="password" class="form-control auth-input" placeholder="Nhập mật khẩu" name="pass"
-                        required />
+                        id="pass" />
                 </div>
             </div>
 
 
-            <input type="submit" value="ĐĂNG NHẬP" name="dangnhap" class="btn btn-success w-100 fw-bold mb-3">
+            <input type="submit" value="ĐĂNG NHẬP" name="dangnhap" onclick="return checkEmpty()"
+                class="btn btn-success w-100 fw-bold mb-3">
 
             <div class="text-center">
                 Bạn chưa có tài khoản?
