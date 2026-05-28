@@ -7,6 +7,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
     include './model/danhmuc.php';
     include './model/sanpham.php';
     include './model/user.php';
+    include './model/donhang.php';
 
     include './view/header.php';
 
@@ -182,10 +183,12 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 header('location: ../index.php');
                 break;
             default:
+                $kq = getalldh();
                 include './view/home.php';
                 break;
         }
     } else {
+        $kq = getalldh();
         include './view/home.php';
     }
     include './view/footer.php';

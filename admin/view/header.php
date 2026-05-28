@@ -11,7 +11,7 @@
 
 <body>
     <!-- header -->
-    <header class="mb-4">
+    <header class="pb-4">
         <div class="bg-secondary-subtle p-5">
             <h1 class="fw-bold mb-4">TRANG CHỦ ADMIN</h1>
             <div class="ms-5">

@@ -82,6 +82,7 @@
 if (isset($spdb)) {
     ?>
     <div class="special-product-clean my-5 p-4 bg-white border rounded-3">
+        <h2 class="text-center text-uppercase fw-bold">Sản phẩm đặc biệt</h2>
         <div class="row align-items-center g-4">
             <div class="col-md-6 text-center">
                 <div class="special-clean-img">

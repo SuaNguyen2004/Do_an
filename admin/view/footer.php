@@ -1,5 +1,5 @@
 <!-- footer -->
-<footer class="mt-4">
+<footer class="pt-4">
     <div class="bg-secondary-subtle p-2">
         <p class="fw-bold text-center">CHÚC BẠN CÓ MỘT NGÀY LÀM VIỆC HIỆU QUẢ</p>
     </div>
