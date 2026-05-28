@@ -59,47 +59,18 @@
                         hàng</a>
                 </button>
                 <?php
-                if (count($_SESSION['giohang'][$iduser]) > 0) {
+                if (count($_SESSION['giohang']) > 0) {
                     echo '
                     <button class="btn btn-danger me-3">
                     <a href="index.php?act=delcart" class="text-decoration-none p-3 fw-bold text-light">Xoá giỏ hàng</a>
+                </button>
+                <button class="btn btn-success me-3">
+                    <a href="index.php?act=thanhtoan" class="text-decoration-none p-3 fw-bold text-light">Thanh toán</a>
                 </button>
                 ';
                 }
                 ?>
             </div>
-        </div>
-
-        <div class="col-lg-4 contact-left-content">
-            <!-- right -->
-            <h3>THÔNG TIN ĐẶT HÀNG</h3>
-            <form action="index.php?act=thanhtoan" method="post">
-                <input type="hidden" name="tongdonhang" value="<?= $tong ?>">
-                <table class="dathang">
-                    <tr>
-                        <td><input type="text" name="name" placeholder="Nhập họ tên"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="address" placeholder="Nhập địa chỉ"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="email" placeholder="Nhập email"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="tel" placeholder="Nhập sđt"></td>
-                    </tr>
-                    <tr>
-                        <td>Phương thức thanh toán<br>
-                            <input type="radio" name="pttt" value="1"> Thanh toán khi nhận hàng<br>
-                            <input type="radio" name="pttt" value="2"> Thanh toán chuyển khoản<br>
-                            <input type="radio" name="pttt" value="3"> Thanh toán ví MoMo<br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Thanh toán" name="thanhtoan"></td>
-                    </tr>
-                </table>
-            </form>
         </div>
     </div>
 </div>

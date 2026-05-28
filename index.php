@@ -6,6 +6,7 @@ include './model/connectdb.php';
 include './model/user.php';
 include './model/danhmuc.php';
 include './model/sanpham.php';
+include './model/donhang.php';
 
 $dsdm = getalldm();
 $spdb = getspdb();
@@ -207,9 +208,9 @@ if (isset($_GET['act'])) {
             break;
         case 'updateuserinfo':
             if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+                $id = $_SESSION['id'];
+                $user = $_SESSION['user'];
                 if (isset($_POST['capnhat']) && $_POST['capnhat']) {
-                    $id = $_SESSION['id'];
-                    $user = $_SESSION['user'];
                     $name = $_POST['name'];
                     $address = $_POST['address'];
                     $email = $_POST['email'];
@@ -220,6 +221,36 @@ if (isset($_GET['act'])) {
             }
             $userinfo = userinfo($id, $user);
             include './view/userinfo.php';
+            break;
+        case 'thanhtoan':
+            if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+                $iduser = $_SESSION['id'];
+                if (!isset($_SESSION['giohang']) || !isset($_SESSION['giohang'][$iduser])) {
+                    $_SESSION['giohang'][$iduser] = [];
+                }
+                if (isset($_POST['thanhtoan']) && $_POST['thanhtoan']) {
+                    //lấy dữ liệu
+                    $tongdonhang = $_POST['tongdonhang'];
+                    $name = $_POST['name'];
+                    $address = $_POST['address'];
+                    $email = $_POST['email'];
+                    $tel = $_POST['tel'];
+                    $pttt = $_POST['pttt'];
+                    $madh = "#MNM" . rand(0, 999999);
+                    // tạo đơn hàng
+                    // và trả về 1 id đơn hàng
+                    // $item = array($id, $tensp, $img, $gia, $sl);
+                    $iddh = taodonhang($madh, $tongdonhang, $pttt, $name, $address, $email, $tel, $iduser);
+                    $_SESSION['iddh'] = $iddh;
+                    if (isset($_SESSION['giohang'][$iduser]) && $_SESSION['giohang'][$iduser] > 0) {
+                        foreach ($_SESSION['giohang'][$iduser] as $item) {
+                            addtocart($iddh, $item[0], $item[1], $item[2], $item[3], $item[4]);
+                        }
+                        unset($_SESSION['giohang'][$iduser]);
+                    }
+                }
+            }
+            include './view/donhang.php';
             break;
         default:
             include './view/home.php';
