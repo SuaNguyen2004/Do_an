@@ -197,8 +197,31 @@ if (isset($_GET['act'])) {
             }
             include './view/chitietsanpham.php';
             break;
-        default:
+        case 'userinfo':
+            if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+                $id = $_SESSION['id'];
+                $user = $_SESSION['user'];
+                $userinfo = userinfo($id, $user);
+            }
+            include './view/userinfo.php';
+            break;
+        case 'updateuserinfo':
+            if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+                if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                    $id = $_SESSION['id'];
+                    $user = $_SESSION['user'];
+                    $name = $_POST['name'];
+                    $address = $_POST['address'];
+                    $email = $_POST['email'];
+                    $tel = $_POST['tel'];
 
+                    update($id, $name, $address, $email, $tel);
+                }
+            }
+            $userinfo = userinfo($id, $user);
+            include './view/userinfo.php';
+            break;
+        default:
             include './view/home.php';
             break;
     }

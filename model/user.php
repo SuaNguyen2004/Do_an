@@ -33,4 +33,20 @@ function checkuser($user)
     $kq = $stmt->fetchAll();
     return count($kq);
 }
+function userinfo($id, $user)
+{
+    $conn = connectdb();
+    $stmt = $conn->prepare("SELECT * FROM tbl_user WHERE id = '" . $id . "' AND user ='" . $user . "'");
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $kq = $stmt->fetchAll();
+    return $kq;
+}
+function update($id, $name, $address, $email, $tel)
+{
+    $conn = connectdb();
+    $sql = "UPDATE tbl_user SET name='" . $name . "', address='" . $address . "', email='" . $email . "', tel='" . $tel . "'   WHERE id=" . $id;
+    // execute the query
+    $conn->exec($sql);
+}
 ?>
