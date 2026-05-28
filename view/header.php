@@ -31,7 +31,7 @@
                         <i class="fa-solid fa-bars text-dark"></i> Danh mục
                     </button>
 
-                    <ul class="dropdown-menu category-dropdown-menu" aria-labelledby="dropdownCategoryButton">
+                    <ul class="dropdown-menu category-dropdown-menu">
                         <li>
                             <a class="dropdown-item category-dropdown-item" href="index.php?act=sanpham">Tất cả sản
                                 phẩm</a>
@@ -49,13 +49,6 @@
                             echo 'Chưa có danh mục.';
                         }
                         ?>
-                        <!-- <li>
-                            <a class="dropdown-item category-dropdown-item" href="#">Đồ uống</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item category-dropdown-item" href="#">Đồ ăn
-                                vặt</a>
-                        </li> -->
                     </ul>
                 </div>
                 <a class="navbar-brand fw-bold text-white m-0 p-0 fs-4" href="index.php">MINIMART</a>
@@ -64,8 +57,7 @@
             <div class="flex-grow-1 d-flex justify-content-center mx-5">
                 <form class="search-container" action="index.php?act=sanpham&keyword=" method="POST">
                     <input class="form-control search-input" name="keyword" type="search"
-                        placeholder="Tìm kiếm sản phẩm..." aria-label="Search" />
-                    <!-- <input type="submit" value="Tìm" class="btn btn-warning rounded-circle btn-search-trigger"> -->
+                        placeholder="Tìm kiếm sản phẩm..."/>
                     <button class="btn btn-warning rounded-circle btn-search-trigger" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
@@ -73,12 +65,6 @@
             </div>
 
             <div class="d-flex align-items-center ms-auto gap-3">
-                <!-- <button class="btn btn-light btn-sm py-2 px-3">
-                    <a href="index.php" class="text-decoration-none fw-bold text-dark">
-                        <i class="fa-solid fa-house me-2 text-dark"></i>Trang Chủ
-                    </a>
-                </button> -->
-
                 <?php
                 if (isset($_SESSION['user']) && $_SESSION['user'] != "") {
                     echo '<button class="btn btn-light btn-sm py-2 px-3">
