@@ -6,7 +6,7 @@ function getallsp($kyw = "")
     if ($kyw != "") {
         $sql .= " AND tensp LIKE '%" . $kyw . "%'";
     }
-    $sql .= " ORDER BY id DESC LIMIT 24";
+    $sql .= " ORDER BY id DESC LIMIT 48";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -18,7 +18,7 @@ function getspbydm($iddm)
     $conn = connectdb();
     $sql = "SELECT tbl_sanpham.id, tensp,img,gia,tendm FROM tbl_sanpham
     INNER JOIN tbl_danhmuc ON tbl_danhmuc.id = tbl_sanpham.iddm
-    WHERE tbl_sanpham.iddm = " . $iddm . " ORDER BY id DESC LIMIT 4";
+    WHERE tbl_sanpham.iddm = " . $iddm . " ORDER BY id DESC LIMIT 8";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -46,9 +46,10 @@ function getspdb()
     return $kq;
 }
 
-function showsp($getspbydm){
+function showsp($getspbydm)
+{
     foreach ($getspbydm as $sp) {
-                    echo '
+        echo '
             <!-- ! sản phẩm 1 -->
                 <div class="col">
                     <div class="card h-100 product-card sphover">
@@ -73,6 +74,6 @@ function showsp($getspbydm){
                     </div>
                 </div>
             ';
-                }
+    }
 }
 ?>

@@ -2,7 +2,7 @@
 function getallsp()
 {
     $conn = connectdb();
-    $stmt = $conn->prepare("SELECT * FROM tbl_sanpham");
+    $stmt = $conn->prepare("SELECT * FROM tbl_sanpham WHERE 1 ORDER BY id DESC");
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = $stmt->fetchAll();

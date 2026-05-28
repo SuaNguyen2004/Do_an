@@ -3,9 +3,9 @@
     <div class="bg-secondary-subtle p-5">
         <h2 class="mb-4">QUẢN LÝ DANH MỤC</h2>
         <form action="index.php?act=adddm" method="post">
-            <label for="" class="fw-bold mb-2">Tên danh mục</label><br />
-            <input type="text" name="tendm" />
-            <input type="submit" value="Thêm mới" name="themmoi" class="btn btn-success ms-3" />
+            <label for="" class="fw-bold mb-2">Tên danh mục:</label>
+            <input type="text" name="tendm" class="form-control" />
+            <input type="submit" value="Thêm mới" name="themmoi" class="btn btn-success mt-3" />
         </form>
 
         <br />
