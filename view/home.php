@@ -91,7 +91,7 @@ if (isset($spdb)) {
             </div>
 
             <div class="col-md-5 text-start ps-md-4 me-3">
-                <h2 class="fw-bold mb-3"><?= $spdb[0]['tensp'] ?></h2>
+                <h2 class="fw-bold mb-3 text-uppercase"><?= $spdb[0]['tensp'] ?></h2>
 
                 <p class="special-clean-desc text-secondary mb-4">
                     <?= $spdb[0]['mota'] ?>
