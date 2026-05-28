@@ -77,26 +77,34 @@
                 <input type="hidden" name="tongdonhang" value="<?= $tong ?>">
                 <table class="dathang">
                     <tr>
-                        <td><input type="text" name="name" placeholder="Nhập họ tên"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="address" placeholder="Nhập địa chỉ"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="email" placeholder="Nhập email"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="tel" placeholder="Nhập sđt"></td>
-                    </tr>
-                    <tr>
-                        <td>Phương thức thanh toán<br>
-                            <input type="radio" name="pttt" value="1"> Thanh toán khi nhận hàng<br>
-                            <input type="radio" name="pttt" value="2"> Thanh toán chuyển khoản<br>
-                            <input type="radio" name="pttt" value="3"> Thanh toán ví MoMo<br>
+                        <td><input type="text" name="name" id="name" placeholder="Nhập họ tên" class="form-control">
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Thanh toán" name="thanhtoan"></td>
+                        <td><input type="text" name="address" id="address" placeholder="Nhập địa chỉ"
+                                class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="email" id="email" placeholder="Nhập email" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="tel" id="tel" placeholder="Nhập sđt" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Phương thức thanh toán<br>
+                            <input type="radio" class="form-check-input" name="pttt" id="pttt" value="1"> Thanh toán khi
+                            nhận hàng<br>
+                            <input type="radio" class="form-check-input" name="pttt" id="pttt" value="2"> Thanh toán
+                            chuyển khoản<br>
+                            <input type="radio" class="form-check-input" name="pttt" id="pttt" value="3"> Thanh toán ví
+                            MoMo<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Thanh toán" onclick="return checkPayment()" name="thanhtoan"
+                                class="btn btn-success">
+                        </td>
                     </tr>
                 </table>
             </form>
