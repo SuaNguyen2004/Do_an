@@ -6,6 +6,7 @@
             <tr class="table-primary">
                 <th>STT</th>
                 <th>Tên đăng nhập</th>
+                <th>Họ tên khách hàng</th>
                 <th>Địa chỉ</th>
                 <th>Email</th>
                 <th>Số điện thoại</th>
@@ -19,6 +20,7 @@
                     echo '<tr>
                         <td class="p-3">' . $i + 1 . '</td>
                         <td class="p-3">' . $user['user'] . '</td>
+                        <td class="p-3">' . $user['name'] . '</td>
                         <td class="p-3">' . $user['address'] . '</td>
                         <td class="p-3">' . $user['email'] . '</td>
                         <td class="p-3">' . $user['tel'] . '</td>
