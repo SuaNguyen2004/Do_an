@@ -62,8 +62,8 @@
                 if (count($_SESSION['giohang'][$iduser]) > 0) {
                     echo '
                     <button class="btn btn-danger me-3">
-                    <a href="index.php?act=delcart" class="text-decoration-none p-3 fw-bold text-light">Xoá giỏ hàng</a>
-                </button>
+                        <a href="index.php?act=delcart" class="text-decoration-none p-3 fw-bold text-light">Xoá giỏ hàng</a>
+                    </button>
                 ';
                 }
                 ?>

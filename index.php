@@ -244,7 +244,7 @@ if (isset($_GET['act'])) {
                     $_SESSION['iddh'] = $iddh;
                     if (isset($_SESSION['giohang'][$iduser]) && $_SESSION['giohang'][$iduser] > 0) {
                         foreach ($_SESSION['giohang'][$iduser] as $item) {
-                            addtocart($iddh, $item[0], $item[1], $item[2], $item[3], $item[4]);
+                            addtocart($iddh, $item[0], $item[1], $item[2], $item[4], $item[3]);
                         }
                         unset($_SESSION['giohang'][$iduser]);
                     }
