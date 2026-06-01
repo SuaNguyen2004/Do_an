@@ -67,6 +67,8 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     $tensp = $_POST['tensp'];
                     // $img = $_POST['img'];
                     $gia = $_POST['gia'];
+                    $mota = $_POST['mota'];
+                    $soluongkho = $_POST['soluongkho'];
 
                     $target_dir = "uploads/";
                     $target_file = $target_dir . basename($_FILES["img"]["name"]);
@@ -88,7 +90,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
 
                     if ($uploadOk == 1) {
                         move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-                        insertsp($iddm, $tensp, $gia, $img);
+                        insertsp($iddm, $tensp, $gia, $mota, $soluongkho , $img);
                     }
 
                 }
@@ -130,6 +132,8 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     $iddm = $_POST['iddm'];
                     $tensp = $_POST['tensp'];
                     $gia = $_POST['gia'];
+                    $mota = $_POST['mota'];
+                    $soluongkho = $_POST['soluongkho'];
 
                     if ($_FILES["img"]["name"] != "") {
                         $target_dir = "uploads/";
@@ -157,7 +161,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     } else {
                         $img = "";
                     }
-                    updatesp($id, $iddm, $tensp, $gia, $img);
+                    updatesp($id, $iddm, $tensp, $gia, $mota, $soluongkho, $img);
                 }
                 // dsdm
                 $dsdm = getalldm();

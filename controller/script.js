@@ -1,3 +1,20 @@
+const checkRegister = () => {
+  let user = document.getElementById("user");
+  let pass = document.getElementById("pass");
+
+  if (user.value.length > 20) {
+    alert("Tên tài khoản tối đa 20 kí tự");
+    user.focus();
+    return false;
+  } else if (pass.value.length > 20) {
+    alert("Mật khẩu tối đa 20 kí tự");
+    pass.focus();
+    return false;
+  } else {
+    return true;
+  }
+};
+
 const checkEmpty = () => {
   let user = document.getElementById("user");
   let pass = document.getElementById("pass");
@@ -15,9 +32,22 @@ const checkEmpty = () => {
   }
 };
 
+const validateForm = () => {
+  if (!checkEmpty()) {
+    return false;
+  }
+  if (!checkRegister()) {
+    return false;
+  }
+
+  return true;
+};
+
 const checkPayment = () => {
   let name = document.getElementById("name");
-  let address = document.getElementById("address");
+  let address_detail = document.getElementById("address_detail");
+  let province = document.getElementById("province");
+  let district = document.getElementById("district");
   let email = document.getElementById("email");
   let tel = document.getElementById("tel");
   let pttt = document.querySelector('input[name="pttt"]:checked');
@@ -26,9 +56,17 @@ const checkPayment = () => {
     alert("Bạn chưa nhập Họ tên");
     name.focus();
     return false;
-  } else if (!address.value.trim()) {
-    alert("Bạn chưa nhập Địa Chỉ");
-    address.focus();
+  } else if (!address_detail.value.trim()) {
+    alert("Bạn chưa nhập Địa chỉ cụ thể");
+    address_detail.focus();
+    return false;
+  } else if (province.value == "") {
+    alert("Bạn chưa chọn Tỉnh / thành phố");
+    province.focus();
+    return false;
+  } else if (district.value == "") {
+    alert("Bạn chưa chọn Quận/ Huyện");
+    district.focus();
     return false;
   } else if (!email.value.trim()) {
     alert("Bạn chưa nhập Email");

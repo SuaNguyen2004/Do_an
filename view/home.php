@@ -7,7 +7,7 @@
     <!-- ? danh mục 1 -->
     <?php
     // var_dump($dsdm);
-    $limit_danhmuc = 2;
+    $limit_danhmuc = 3;
 
     if (isset($dsdm) && count($dsdm) > 0) {
 
@@ -49,14 +49,23 @@
                                             <h5 class="product-name fw-bold text-uppercase"><?= $sp['tensp'] ?></h5>
                                         </a>
                                         <p class="product-price fw-bold"><?= number_format($sp['gia'], 0, ',', '.') ?> đ</p>
-                                        <form action="index.php?act=giohang" method="post">
-                                            <input type="hidden" name="id" value="<?= $sp['id'] ?>">
-                                            <input type="hidden" name="tensp" value="<?= $sp['tensp'] ?>">
-                                            <input type="hidden" name="img" value="<?= $sp['img'] ?>">
-                                            <input type="hidden" name="gia" value="<?= $sp['gia'] ?>">
-                                            <input type="submit" value="Thêm vào giỏ" name="addtocart"
-                                                class="rounded-pill mt-auto d-flex justify-content-between align-items-center w-100 fw-bold btn-add-cart p-2">
-                                        </form>
+
+                                        <?php if (isset($sp['soluongkho']) && $sp['soluongkho'] > 0): ?>
+                                            <form action="index.php?act=giohang" method="post">
+                                                <input type="hidden" name="id" value="<?= $sp['id'] ?>">
+                                                <input type="hidden" name="tensp" value="<?= $sp['tensp'] ?>">
+                                                <input type="hidden" name="img" value="<?= $sp['img'] ?>">
+                                                <input type="hidden" name="gia" value="<?= $sp['gia'] ?>">
+                                                <input type="hidden" name="sl" value="1">
+                                                <input type="submit" value="Thêm vào giỏ" name="addtocart"
+                                                    class="rounded-pill mt-auto d-flex justify-content-between align-items-center w-100 fw-bold btn-add-cart p-2">
+                                            </form>
+                                        <?php else: ?>
+                                            <button class="btn btn-secondary text-light fw-bold rounded-pill w-100 p-2 mt-auto" disabled
+                                                style="cursor: not-allowed;">
+                                                HẾT HÀNG
+                                            </button>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <!-- kết sp 1 -->

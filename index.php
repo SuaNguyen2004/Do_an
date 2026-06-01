@@ -38,8 +38,33 @@ if (isset($_GET['act'])) {
                     } else {
                         $sl = 1;
                     }
+
+                    // Kiểm tra số lượng kho thực tế
+                    $oneprod = getonesp($id);
+                    $soluongkho_hientai = $oneprod[0]['soluongkho'];
+
                     $i = 0;
                     $fg = 0;
+                    $sl_trong_gio = 0;
+
+                    // Tìm xem sản phẩm đã có trong giỏ chưa và lấy số lượng hiện tại
+                    foreach ($_SESSION['giohang'][$iduser] as $cart) {
+                        if ($cart[0] == $id) {
+                            $sl_trong_gio = $cart[4];
+                            break;
+                        }
+                    }
+
+                    // KIỂM TRA SỐ LƯỢNG VƯỢT QUÁ TRONG KHO
+                    if (($sl + $sl_trong_gio) > $soluongkho_hientai) {
+                        echo '
+                        <script>
+                        alert("Số lượng bạn đặt vượt quá lượng hàng còn lại trong kho (Tối đa bạn có thể mua thêm: ' . ($soluongkho_hientai - $sl_trong_gio) . ' sản phẩm).");
+                        window.location.href = "index.php?act=chitietsanpham&id=' . $id . '";
+                        </script>
+                        ';
+                        exit();
+                    }
 
                     foreach ($_SESSION['giohang'][$iduser] as $cart) {
                         if ($cart[0] == $id) {
@@ -65,7 +90,6 @@ if (isset($_GET['act'])) {
                 window.location.href = "index.php?act=dangnhap";
                 </script>
                 ';
-                // header('location: index.php?act=dangnhap');
             }
             break;
 
@@ -170,7 +194,6 @@ if (isset($_GET['act'])) {
             //     $getspbydm = [];
             // }
 
-            // AI
             // 1. Kiểm tra nếu người dùng thực hiện hành động TÌM KIẾM
             if (isset($_POST['keyword']) && $_POST['keyword'] != "") {
                 $kyw = $_POST['keyword'];
@@ -229,10 +252,16 @@ if (isset($_GET['act'])) {
                     $_SESSION['giohang'][$iduser] = [];
                 }
                 if (isset($_POST['thanhtoan']) && $_POST['thanhtoan']) {
-                    //lấy dữ liệu
+                    //lấy dữ liệu 
+
+                    $address_detail = $_POST['address_detail'];
+                    $district = $_POST['district'];
+                    $province = $_POST['province'];
+                    $address = $address_detail . ", " . $district . ", " . $province;
+
                     $tongdonhang = $_POST['tongdonhang'];
                     $name = $_POST['name'];
-                    $address = $_POST['address'];
+
                     $email = $_POST['email'];
                     $tel = $_POST['tel'];
                     $pttt = $_POST['pttt'];
@@ -245,6 +274,12 @@ if (isset($_GET['act'])) {
                     if (isset($_SESSION['giohang'][$iduser]) && $_SESSION['giohang'][$iduser] > 0) {
                         foreach ($_SESSION['giohang'][$iduser] as $item) {
                             addtocart($iddh, $item[0], $item[1], $item[2], $item[4], $item[3]);
+
+                            // 2. LOGIC TRỪ SỐ LƯỢNG KHO THỰC TẾ
+                            $product_id = $item[0];
+                            $sl_mua = $item[4];
+                            
+                            updatesoluongkho($sl_mua, $product_id);
                         }
                         unset($_SESSION['giohang'][$iduser]);
                     }

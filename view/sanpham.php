@@ -18,7 +18,7 @@ if (isset($getspbydm) && count($getspbydm) > 0) {
     </div>
     <!-- ! end home -->
     <?php
-    // AI làm
+
 } elseif (isset($kyw)) {
     ?>
     <div class="container pb-5 bg-light" style="margin-top: 80px">

@@ -8,11 +8,11 @@ function getallsp()
     $kq = $stmt->fetchAll();
     return $kq;
 }
-function insertsp($iddm, $tensp, $gia, $img)
+function insertsp($iddm, $tensp, $gia, $mota, $soluongkho, $img)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO tbl_sanpham (iddm, tensp, gia, img) 
-            VALUES ('$iddm', '$tensp', '$gia', '$img')";
+    $sql = "INSERT INTO tbl_sanpham (iddm, tensp, gia, mota, soluongkho, img) 
+            VALUES ('$iddm', '$tensp', '$gia', '$mota','$soluongkho', '$img')";
     $conn->exec($sql);
 }
 
@@ -31,13 +31,13 @@ function getonesp($id)
     $kq = $stmt->fetchAll();
     return $kq;
 }
-function updatesp($id, $iddm, $tensp, $gia, $img)
+function updatesp($id, $iddm, $tensp, $gia, $mota, $soluongkho, $img)
 {
     $conn = connectdb();
     if ($img == "") {
-        $sql = "UPDATE tbl_sanpham SET iddm='" . $iddm . "', tensp='" . $tensp . "', gia='" . $gia . "'   WHERE id=" . $id;
+        $sql = "UPDATE tbl_sanpham SET iddm='" . $iddm . "', tensp='" . $tensp . "', gia='" . $gia . "', mota = '" . $mota . "', soluongkho = '" . $soluongkho . "'  WHERE id=" . $id;
     } else {
-        $sql = "UPDATE tbl_sanpham SET iddm='" . $iddm . "', tensp='" . $tensp . "', gia='" . $gia . "', img='" . $img . "'   WHERE id=" . $id;
+        $sql = "UPDATE tbl_sanpham SET iddm='" . $iddm . "', tensp='" . $tensp . "', gia='" . $gia . "',mota = '" . $mota . "', soluongkho = '" . $soluongkho . "' , img='" . $img . "'    WHERE id=" . $id;
     }
 
     // execute the query

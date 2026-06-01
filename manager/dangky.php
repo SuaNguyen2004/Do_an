@@ -30,7 +30,7 @@
             <!-- <button type="submit"  class="btn btn-success w-100 fw-bold mb-3">
                 ĐĂNG KÝ
             </button> -->
-            <input type="submit" value="ĐĂNG KÝ" name="dangky" onclick="return checkEmpty()"
+            <input type="submit" value="ĐĂNG KÝ" name="dangky" onclick="return validateForm()"
                 class="btn btn-success w-100 fw-bold mb-3">
 
             <div class="text-center auth-footer-text">

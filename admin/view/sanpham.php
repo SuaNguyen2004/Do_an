@@ -33,17 +33,27 @@
                 <label for="" class="form-label fw-bold mb-2">Giá: </label>
                 <input type="number" name="gia" class="form-control" min="0" value="0" /><br />
             </div>
+            <div class="mb-3">
+                <label for="" class="form-label fw-bold mb-2">Mô tả: </label>
+                <input type="text" name="mota" class="form-control" value="Cập nhật sau" /><br />
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label fw-bold mb-2">Số lượng kho: </label>
+                <input type="number" name="soluongkho" class="form-control" min="0" value="0" /><br />
+            </div>
 
             <input type="submit" value="Thêm mới" name="themmoi" onclick="return checkEmptySP()"
                 class="btn btn-success mt-3" />
         </form>
         <br />
-        <table class="table table-hover text-center w-75">
+        <table class="table table-hover text-center w-100">
             <tr class="table-primary">
                 <th>STT</th>
                 <th>Tên sản phẩm</th>
                 <th>Hình ảnh</th>
                 <th>Giá</th>
+                <th>Mô tả</th>
+                <th>Số lượng kho</th>
                 <th>Hành động</th>
             </tr>
             <?php
@@ -56,6 +66,8 @@
                         <td class="p-3">' . $sp['tensp'] . '</td>
                         <td class="p-3"><img src = "./uploads/' . $sp['img'] . '" width = "70px"></td>
                         <td class="p-3">' . number_format($sp['gia'], 0, ',', '.') . ' đ</td>
+                        <td class="p-3">' . $sp['mota'] . '</td>
+                        <td class="p-3">' . $sp['soluongkho'] . '</td>
 
                         <td class="p-3">
                             <a href="index.php?act=updatespform&id=' . $sp['id'] . '" class="text-decoration-none me-2">Sửa</a> |
@@ -66,16 +78,6 @@
                 }
             }
             ?>
-            <!-- <tr>
-                <td>1</td>
-                <td>Bia heineken</td>
-                <td>Bia.jpg</td>
-                <td>30000</td>
-                <td>
-                    <a href="#" class="text-decoration-none me-2">Sửa</a> |
-                    <a href="#" class="text-decoration-none text-danger ms-2">Xoá</a>
-                </td>
-            </tr> -->
         </table>
     </div>
 </main>

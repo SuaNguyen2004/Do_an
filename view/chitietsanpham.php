@@ -17,11 +17,33 @@ global $kq;
 
                     <h2 class="product-price fw-bold mb-4"><?= number_format($kq[0]['gia'], 0, ',', '.') ?> đ</h2>
 
+                    <div class="p-2 w-75 mb-2">
+                        <p class="mb-2 fw-bold">
+                            Mô tả sản phẩm: </p>
+                        <?= $kq[0]['mota'] ?>
+                    </div>
+
+                    <p class="mb-3">
+                        <strong>Trạng thái: </strong><br>
+                        <?php if ($kq[0]['soluongkho'] > 0): ?>
+                            <span class="text-success fw-bold"> Còn hàng (Trong kho:
+                                <?= $kq[0]['soluongkho'] ?>)
+                            </span>
+                        <?php else: ?>
+                            <span class="text-danger fw-bold">Tạm hết hàng</span>
+                        <?php endif; ?>
+                    </p>
+
                     <form action="index.php?act=giohang" method="POST" enctype="multipart/form-data">
                         <div class="mb-4">
                             <label for="" class="fw-bold text-dark mb-2">Số lượng:</label>
-                            <input type="number" name="sl" class="form-control input-box" value="1" min="1" max="20"
-                                step="1" />
+                            <?php if ($kq[0]['soluongkho'] > 0): ?>
+                                <input type="number" name="sl" class="form-control input-box" value="1" min="1"
+                                    max="<?= $kq[0]['soluongkho'] ?>" step="1" />
+                            <?php else: ?>
+                                <input type="number" class="form-control input-box" value="0" disabled />
+                            <?php endif; ?>
+
                             <input type="hidden" name="id" value="<?= $kq[0]['id'] ?>">
                             <input type="hidden" name="tensp" value="<?= $kq[0]['tensp'] ?>">
                             <input type="hidden" name="img" value="<?= $kq[0]['img'] ?>">
@@ -29,9 +51,15 @@ global $kq;
                         </div>
 
                         <div class="mt-4">
-                            <input type="submit" value="THÊM VÀO GIỎ" name="addtocart"
-                                class="btn px-4 py-3 rounded-pill text-light fw-bold"
-                                style="background-color: #e57a8c" />
+                            <?php if ($kq[0]['soluongkho'] > 0): ?>
+                                <input type="submit" value="THÊM VÀO GIỎ" name="addtocart"
+                                    class="btn px-4 py-3 rounded-pill text-light fw-bold"
+                                    style="background-color: #e57a8c" />
+                            <?php else: ?>
+                                <input type="button" value="HẾT HÀNG"
+                                    class="btn px-4 py-3 rounded-pill text-light fw-bold bg-secondary" disabled
+                                    style="cursor: not-allowed;" />
+                            <?php endif; ?>
                         </div>
                     </form>
                 </div>

@@ -16,7 +16,7 @@ function getallsp($kyw = "")
 function getspbydm($iddm)
 {
     $conn = connectdb();
-    $sql = "SELECT tbl_sanpham.id, tensp,img,gia,tendm FROM tbl_sanpham
+    $sql = "SELECT tbl_sanpham.id, tensp,img,gia,tendm,soluongkho FROM tbl_sanpham
     INNER JOIN tbl_danhmuc ON tbl_danhmuc.id = tbl_sanpham.iddm
     WHERE tbl_sanpham.iddm = " . $iddm . " ORDER BY id DESC LIMIT 8";
     $stmt = $conn->prepare($sql);
@@ -44,6 +44,13 @@ function getspdb()
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = $stmt->fetchAll();
     return $kq;
+}
+function updatesoluongkho($sl_mua, $product_id)
+{
+    $conn = connectdb();
+    // Thực hiện câu lệnh cập nhật giảm tồn kho trực tiếp dựa trên ID sản phẩm
+    $sql = "UPDATE tbl_sanpham SET soluongkho = soluongkho - $sl_mua WHERE id = $product_id";
+    $conn->exec($sql);
 }
 
 function showsp($getspbydm)
