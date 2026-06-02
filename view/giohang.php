@@ -120,8 +120,8 @@
                         </tr>
                         <tr>
                             <td>Số điện thoại:<br>
-                                <input type="text" name="tel" id="tel" placeholder="Nhập số điện thoại"
-                                    class="form-control">
+                                <input type="tel" name="tel" id="tel" pattern="0[0-9]{9}"
+                                    placeholder="Nhập số điện thoại ví dụ : 0987654321" class="form-control">
                             </td>
                         </tr>
                         <tr>

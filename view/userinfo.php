@@ -21,7 +21,8 @@
                 </div>
                 <div class="mb-2">
                     <label for="" class="form-label fw-bold mb-2">Số điện thoại của bạn: </label>
-                    <input type="text" name="tel" class="form-control" value="<?= $userinfo[0]['tel'] ?>" /><br />
+                    <input type="tel" name="tel" class="form-control" pattern="0[0-9]{9}"
+                        placeholder="Nhập số điện thoại ví dụ : 0987654321" value="<?= $userinfo[0]['tel'] ?>" /><br />
                 </div>
 
                 <input type="submit" value="Cập nhật" name="capnhat" class="btn btn-info mt-3 fw-bold text-uppercase" />
