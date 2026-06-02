@@ -23,7 +23,7 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Tên sản phẩm: </label>
-                <input type="text" name="tensp" id="tensp" class="form-control" /><br />
+                <input type="text" name="tensp" id="tensp" class="form-control" maxlength="100" /><br />
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Hình ảnh: </label>
@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Giá: </label>
-                <input type="number" name="gia" class="form-control" min="0" value="0" /><br />
+                <input type="number" name="gia" class="form-control" min="0" max="10000000" value="0" /><br />
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Mô tả: </label>
@@ -39,7 +39,7 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label fw-bold mb-2">Số lượng kho: </label>
-                <input type="number" name="soluongkho" class="form-control" min="0" value="0" /><br />
+                <input type="number" name="soluongkho" class="form-control" min="0" max="500" value="0" /><br />
             </div>
 
             <input type="submit" value="Thêm mới" name="themmoi" onclick="return checkEmptySP()"
