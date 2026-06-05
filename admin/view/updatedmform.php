@@ -8,7 +8,14 @@
         ?>
         <form action="index.php?act=updatedmform" method="post">
             <label for="" class="fw-bold mb-2">Tên danh mục</label><br />
-            <input type="text" name="tendm" id="tendm" value="<?= $kqone[0]['tendm'] ?>" />
+            <input type="text" name="tendm" id="tendm" class="form-control" maxlength="50"
+                value="<?= $kqone[0]['tendm'] ?>" />
+            <label for="" class="fw-bold mb-2">Ưu tiên:</label>
+            <input type="text" name="uutien" id="uutien" class="form-control" maxlength="2"
+                value="<?= $kqone[0]['uutien'] ?>" />
+            <label for="" class="fw-bold mb-2">Hiển thị:</label>
+            <input type="text" name="hienthi" id="hienthi" class="form-control" maxlength="1"
+                value="<?= $kqone[0]['hienthi'] ?>" />
             <input type="hidden" name="id" value="<?= $kqone[0]['id'] ?>" />
             <input type="submit" value="Cập nhật" name="capnhat" onclick="return checkEmptyDM()"
                 class="btn btn-info ms-3" />

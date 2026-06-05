@@ -5,6 +5,10 @@
         <form action="index.php?act=adddm" method="post">
             <label for="" class="fw-bold mb-2">Tên danh mục:</label>
             <input type="text" name="tendm" id="tendm" class="form-control" maxlength="50" />
+            <label for="" class="fw-bold mb-2">Ưu tiên:</label>
+            <input type="text" name="uutien" id="uutien" class="form-control" value="99" maxlength="2"/>
+            <label for="" class="fw-bold mb-2">Hiển thị:</label>
+            <input type="text" name="hienthi" id="hienthi" class="form-control" value="1" maxlength="1" />
             <input type="submit" value="Thêm mới" name="themmoi" onclick="return checkEmptyDM()"
                 class="btn btn-success mt-3" />
         </form>

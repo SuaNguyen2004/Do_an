@@ -9,11 +9,11 @@ function getalldm()
     return $kq;
 
 }
-function themdm($tendm)
+function themdm($tendm, $uutien, $hienthi)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO tbl_danhmuc (tendm)
-            VALUES ('$tendm')";
+    $sql = "INSERT INTO tbl_danhmuc (tendm, uutien, hienthi)
+            VALUES ('$tendm', '$uutien', '$hienthi')";
     $conn->exec($sql);
 }
 
@@ -33,10 +33,10 @@ function getonedm($id)
     $kq = $stmt->fetchAll();
     return $kq;
 }
-function updatedm($id, $tendm)
+function updatedm($id, $tendm, $uutien, $hienthi)
 {
     $conn = connectdb();
-    $sql = "UPDATE tbl_danhmuc SET tendm='" . $tendm . "' WHERE id=" . $id;
+    $sql = "UPDATE tbl_danhmuc SET tendm='" . $tendm . "', uutien = '" . $uutien . "', hienthi = '" . $hienthi . "' WHERE id=" . $id;
     // execute the query
     $conn->exec($sql);
 }

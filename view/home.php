@@ -61,7 +61,7 @@
                                                     class="rounded-pill mt-auto d-flex justify-content-between align-items-center w-100 fw-bold btn-add-cart p-2">
                                             </form>
                                         <?php else: ?>
-                                            <button class="btn btn-secondary text-light fw-bold rounded-pill w-100 p-2 mt-auto" disabled
+                                            <button class="btn btn-secondary text-light fw-bold rounded-pill w-100 mt-auto" disabled
                                                 style="cursor: not-allowed;">
                                                 HẾT HÀNG
                                             </button>

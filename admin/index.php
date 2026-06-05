@@ -22,7 +22,9 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'adddm':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $tendm = $_POST['tendm'];
-                    themdm($tendm);
+                    $uutien = $_POST['uutien'];
+                    $hienthi = $_POST['hienthi'];
+                    themdm($tendm, $uutien, $hienthi);
                 }
                 $kq = getalldm();
                 include './view/danhmuc.php';
@@ -46,12 +48,13 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 if (isset($_POST['id']) && $_POST['id']) {
                     $id = $_POST['id'];
                     $tendm = $_POST['tendm'];
-                    updatedm($id, $tendm);
+                    $uutien = $_POST['uutien'];
+                    $hienthi = $_POST['hienthi'];
+                    updatedm($id, $tendm, $uutien, $hienthi);
 
                     $kq = getalldm();
                     include './view/danhmuc.php';
                 }
-                // include './view/updatedmform.php';
                 break;
             case 'sanpham':
                 // lay dsdm
@@ -90,7 +93,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
 
                     if ($uploadOk == 1) {
                         move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-                        insertsp($iddm, $tensp, $gia, $mota, $soluongkho , $img);
+                        insertsp($iddm, $tensp, $gia, $mota, $soluongkho, $img);
                     }
 
                 }
