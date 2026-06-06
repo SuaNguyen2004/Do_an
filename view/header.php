@@ -57,7 +57,7 @@
             <div class="flex-grow-1 d-flex justify-content-center mx-5">
                 <form class="search-container" action="index.php?act=sanpham&keyword=" method="POST">
                     <input class="form-control search-input" name="keyword" type="search"
-                        placeholder="Tìm kiếm sản phẩm..."/>
+                        placeholder="Tìm kiếm sản phẩm..." required />
                     <button class="btn btn-warning rounded-circle btn-search-trigger" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
